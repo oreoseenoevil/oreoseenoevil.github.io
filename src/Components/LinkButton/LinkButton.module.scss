@@ -1,0 +1,43 @@
+.button {
+  display: block;
+  border: 4px solid var(--foreground);
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  color: var(--foreground);
+  cursor: pointer;
+  position: relative;
+  letter-spacing: 1px;
+  -moz-transition: all 300ms;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -moz-transition: all 300ms;
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+  }
+}
+
+.slide {
+  &:hover,
+  &:active {
+    color: var(--background);
+  }
+
+  &::after {
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--foreground);
+  }
+
+  &:hover::after,
+  &:active::after {
+    width: 100%;
+  }
+}

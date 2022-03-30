@@ -1,0 +1,191 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  z-index: 20;
+  transition: all 300ms linear;
+
+  &_hidden {
+    top: -80px;
+  }
+
+  &_color {
+    background-color: var(--background);
+  }
+
+  .header {
+    min-width: 320px;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 6rem;
+
+    @media (max-width: 800px) {
+      padding: 2rem 5rem;
+    }
+
+    @media (max-width: 600px) {
+      padding: 2rem 3rem;
+    }
+
+    @media (max-width: 500px) {
+      padding: 2rem;
+    }
+
+    .logo {
+      display: flex;
+
+      .logo_link {
+        font-size: 3rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: var(--foreground);
+      }
+    }
+
+    .burger {
+      width: 2.5rem;
+      height: 2rem;
+      display: none;
+      overflow: hidden;
+      transition: transform 200ms var(--cubic);
+
+      &.active {
+        transform: rotate(90deg);
+
+        .bar1 {
+          transform: rotate(45deg);
+          background: var(--foreground);
+          transition: transform 400ms var(--cubic), background 200ms var(--cubic);
+          transition-delay: 200ms;
+        }
+        .bar2 {
+          transform: rotate(-45deg);
+          background: var(--foreground);
+          transition: transform 400ms var(--cubic), background 200ms var(--cubic);
+          transition-delay: 200ms;
+        }
+      }
+
+      @media (max-width: 800px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 9999;
+      }
+
+      span {
+        width: 100%;
+        height: 1px;
+        background: var(--foreground);
+        transform-origin: left;
+        transition: all 300ms var(--cubic);
+        transition-delay: 0ms;
+      }
+    }
+
+    .menu {
+      display: flex;
+      align-items: flex-start;
+      margin-left: auto;
+
+      @media (max-width: 800px) {
+        height: 100vh;
+        position: fixed;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        right: -100%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: var(--background);
+        color: var(--foreground);
+        z-index: 10;
+        transition: 500ms;
+
+        @media (max-width: 600px) {
+          width: 80%;
+        }
+      }
+
+      .switch_mode {
+        display: flex;
+        font-size: 1.25em;
+        cursor: pointer;
+        color: var(--background);
+      }
+
+      .menu_item {
+        display: inline-block;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+
+        &:last-child {
+          display: flex;
+          padding: 0.2rem;
+        }
+
+        &:not(:last-child) {
+          padding-right: 4rem;
+        }
+
+        @media (max-width: 800px) {
+          display: inline-block;
+          padding: 1rem 2rem;
+          margin: 1rem;
+        }
+
+        .link {
+          display: block;
+          padding: 0 0.5rem 0.8rem;
+          position: relative;
+          overflow: hidden;
+          color: var(--foreground);
+
+          @media (max-width: 800px) {
+            padding: 1rem;
+            font-size: 3rem;
+          }
+
+          @media (max-width: 800px) {
+            display: inline-block;
+            padding: 2rem;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0.1em;
+            background-color: var(--foreground);
+            opacity: 0;
+            transition: opacity 300ms, transform 300ms;
+            transform: translate3d(-100%, 0, 0);
+          }
+
+          &:hover::after,
+          &:focus::after {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+          }
+        }
+      }
+    }
+  }
+}

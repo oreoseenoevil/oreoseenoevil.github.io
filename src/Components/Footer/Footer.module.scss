@@ -1,0 +1,33 @@
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+
+    padding: 5rem 6rem;
+
+    @media (max-width: 800px) {
+      padding: 5rem 2rem;
+    }
+  }
+
+  &_span {
+    font-size: 2rem;
+    font-weight: 300;
+
+    @media (max-width: 500px) {
+      font-size: 1.75rem;
+    }
+
+    @media (max-width: 4750px) {
+      font-size: 1.35rem;
+    }
+  }
+}

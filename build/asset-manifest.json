@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/ts-react-portfolio/static/css/main.85489948.css",
+    "main.js": "/ts-react-portfolio/static/js/main.c3429b50.js",
+    "static/js/415.00260fbc.chunk.js": "/ts-react-portfolio/static/js/415.00260fbc.chunk.js",
+    "static/js/787.5fbae3b4.chunk.js": "/ts-react-portfolio/static/js/787.5fbae3b4.chunk.js",
+    "static/media/mlops.png": "/ts-react-portfolio/static/media/mlops.60fdb12356f8a5dd4b8e.png",
+    "static/media/connector-store.png": "/ts-react-portfolio/static/media/connector-store.2305ee50a22788b543a5.png",
+    "static/media/human-ai-hub.png": "/ts-react-portfolio/static/media/human-ai-hub.02fdbfa905ec85b79767.png",
+    "static/media/data2cloud.png": "/ts-react-portfolio/static/media/data2cloud.c9760cec8c5574f71e04.png",
+    "static/media/skill-ai.png": "/ts-react-portfolio/static/media/skill-ai.6d6d94618da1ce77f330.png",
+    "static/media/future-org.png": "/ts-react-portfolio/static/media/future-org.234be696bf0578b68e04.png",
+    "static/media/resume.pdf": "/ts-react-portfolio/static/media/resume.201b54d3f19210c0e2ac.pdf",
+    "static/media/nodejs-1.svg": "/ts-react-portfolio/static/media/nodejs-1.52cbf9a89f44655c0375b9e9f88bf9c5.svg",
+    "static/media/man.svg": "/ts-react-portfolio/static/media/man.da317bae3bf39207353e79f102a87a87.svg",
+    "static/media/node-sass.svg": "/ts-react-portfolio/static/media/node-sass.3b8b17be11b780a4df85e82faba6dee4.svg",
+    "static/media/reactjs.svg": "/ts-react-portfolio/static/media/reactjs.e68b35f4774979ae220b1d5d7b345b00.svg",
+    "static/media/redux.svg": "/ts-react-portfolio/static/media/redux.0e4fb1c819ac4c060c92343147d4ccf7.svg",
+    "static/media/aws-logo.svg": "/ts-react-portfolio/static/media/aws-logo.fd1ba9e4a3db464eca4de7139f0b9711.svg",
+    "static/media/logo-javascript.svg": "/ts-react-portfolio/static/media/logo-javascript.00f3e5cf8bcf4ae623b3835ca5791b15.svg",
+    "static/media/typescript.svg": "/ts-react-portfolio/static/media/typescript.a6305a733dd55243980aec55f96f70c5.svg",
+    "static/media/git-icon.svg": "/ts-react-portfolio/static/media/git-icon.c60b7e5ae8ec2562f23fdddcab300026.svg",
+    "static/media/vscode.svg": "/ts-react-portfolio/static/media/vscode.b8b1e001813039750e6c05c236ab0d46.svg",
+    "index.html": "/ts-react-portfolio/index.html",
+    "static/media/webpack-icon.svg": "/ts-react-portfolio/static/media/webpack-icon.f44900ae6538b4d778644c71e250e7c5.svg",
+    "static/media/html-1.svg": "/ts-react-portfolio/static/media/html-1.f318c8b1d5945fa9adc827ae94849cb1.svg",
+    "main.85489948.css.map": "/ts-react-portfolio/static/css/main.85489948.css.map",
+    "main.c3429b50.js.map": "/ts-react-portfolio/static/js/main.c3429b50.js.map",
+    "415.00260fbc.chunk.js.map": "/ts-react-portfolio/static/js/415.00260fbc.chunk.js.map",
+    "787.5fbae3b4.chunk.js.map": "/ts-react-portfolio/static/js/787.5fbae3b4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.85489948.css",
+    "static/js/main.c3429b50.js"
+  ]
+}

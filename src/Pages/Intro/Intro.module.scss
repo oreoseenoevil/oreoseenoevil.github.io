@@ -1,0 +1,140 @@
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 800px) {
+    flex-direction: column-reverse;
+  }
+
+  &_container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @media (max-width: 800px) {
+      flex: 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    h1 {
+      font-size: 5rem;
+      letter-spacing: 2.5px;
+
+      @media (max-width: 800px) {
+        font-size: 4rem;
+        text-align: center;
+      }
+    }
+
+    h3 {
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+
+      @media (max-width: 800px) {
+        font-size: 2rem;
+      }
+    }
+
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      &_icon {
+        text-decoration: none;
+        color: var(--foreground);
+        transition: all 300ms ease-in;
+      }
+    }
+
+    .linkedin {
+      transition: all 200ms linear;
+
+      &:hover {
+        color: #0077b5;
+        transform: scale(1.1);
+      }
+    }
+
+    .github {
+      transition: all 200ms linear;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .twitter {
+      transition: all 200ms linear;
+      &:hover {
+        color: #1da1f2;
+        transform: scale(1.1);
+      }
+    }
+
+    .instagram {
+      border-radius: 1rem;
+      transition: all 200ms linear;
+
+      &:hover {
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        transform: scale(1.1);
+      }
+    }
+
+    .button_group {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  .img_container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+
+    @media (max-width: 800px) {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding-top: 10rem;
+    }
+
+    .image_circle {
+      display: block;
+      width: 40rem;
+      height: 40rem;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-left: auto;
+      border: 1px solid var(--foreground);
+
+      @media (max-width: 800px) {
+        width: 30rem;
+        height: 30rem;
+      }
+
+      img {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 50%;
+        transition: all 300ms ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

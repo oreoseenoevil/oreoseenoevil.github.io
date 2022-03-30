@@ -1,0 +1,88 @@
+.track {
+  --slide-toggle-thumb-color: var(--foreground);
+  --slide-toggle-track-color: var(--grey-50);
+  --slide-toggle-ripple-color: var(--grey-100);
+  --slide-toggle-track-active-color: var(--grey-0);
+  --slide-toggle-focus-ripple-color: var(--grey-10);
+  --slide-toggle-thumb-active-color: var(--foreground);
+  --slide-toggle-thumb-x: 0px;
+  --slide-toggle-thumb-x-active: 16px;
+
+  &.right_to_left {
+    --slide-toggle-thumb-x: 16px;
+    --slide-toggle-thumb-x-active: 0px;
+  }
+
+  position: relative;
+  width: 36px;
+  height: 14px;
+  border-radius: 100px;
+  background-color: var(--slide-toggle-track-color);
+  border: none;
+  cursor: pointer;
+
+  .thumb {
+    height: 20px;
+    width: 20px;
+    background-color: var(--slide-toggle-thumb-color);
+    border-radius: 100%;
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 50%;
+    padding: 0.3rem;
+    transition: transform 0.2s ease;
+    transform: translate(var(--slide-toggle-thumb-x), -50%);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.14), 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+
+    &::after {
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -50%);
+      content: ' ';
+      position: absolute;
+      z-index: 30;
+      width: 0px;
+      height: 0px;
+      background: var(--slide-toggle-ripple-color);
+      opacity: 0;
+      border-radius: 100px;
+      transition: opacity 0.15s linear, height 0.15s linear, width 0.15s linear;
+    }
+  }
+
+  &:hover {
+    .thumb::after {
+      width: 40px;
+      height: 40px;
+      opacity: 0.05;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    --slide-toggle-riple-color: var(--slide-toggle-focus-ripple-color);
+
+    .thumb::after {
+      width: 40px;
+      height: 40px;
+      opacity: 0.1;
+    }
+  }
+
+  &:active {
+    .thumb::after {
+      width: 40px;
+      height: 40px;
+      opacity: 0.1;
+    }
+  }
+
+  &:global(.SlideToggle_track_active) {
+    --slide-toggle-track-color: var(--slide-toggle-track-active-color);
+    --slide-toggle-thumb-color: var(--slide-toggle-thumb-active-color);
+    --slide-toggle-thumb-x: var(--slide-toggle-thumb-x-active);
+  }
+}

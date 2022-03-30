@@ -1,0 +1,12 @@
+.App {
+  width: 100%;
+  color: var(--foreground);
+  background-color: var(--background);
+
+  &_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
