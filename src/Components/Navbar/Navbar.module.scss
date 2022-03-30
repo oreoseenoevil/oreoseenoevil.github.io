@@ -179,8 +179,7 @@
             transform: translate3d(-100%, 0, 0);
           }
 
-          &:hover::after,
-          &:focus::after {
+          &:hover::after {
             opacity: 1;
             transform: translate3d(0, 0, 0);
           }
