@@ -30,12 +30,12 @@ const socials: Socials[] = [
   },
   {
     icon: FaTwitter,
-    link: '#',
+    link: 'https://www.twitter.com/majessietic/',
     name: 'twitter'
   },
   {
     icon: FaInstagram,
-    link: '#',
+    link: 'https://www.instagram.com/oreoseenoevil/',
     name: 'instagram'
   }
 ];
