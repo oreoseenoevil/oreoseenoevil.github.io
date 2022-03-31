@@ -59,7 +59,7 @@ export const Intro: FC = () => {
         <div className={styles.socials}>
           {socials.map((item: Socials, i) => (
             <a href={item.link} key={i} className={styles.socials_icon} target="_blank" rel="noopener noreferrer">
-              <item.icon size="5rem" className={styles[item.name]} />
+              <item.icon size="5rem" className={`${styles[item.name]} ${!darkMode && styles.light_mode}`} />
             </a>
           ))}
         </div>
