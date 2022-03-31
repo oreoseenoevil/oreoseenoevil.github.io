@@ -2,7 +2,7 @@
   display: block;
   border: 4px solid var(--foreground);
   text-decoration: none;
-  font-size: 2rem;
+  font-size: clamp(1.75rem, 4vw, 2rem);
   padding: 1rem 2rem;
   color: var(--foreground);
   cursor: pointer;

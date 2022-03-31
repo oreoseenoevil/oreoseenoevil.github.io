@@ -16,15 +16,7 @@
   }
 
   &_name {
-    font-size: 2rem;
-
-    @media (max-width: 500px) {
-      font-size: 1.75rem;
-    }
-
-    @media (max-width: 475px) {
-      font-size: 1.35rem;
-    }
+    font-size: clamp(1.35rem, 3vw, 2rem);
   }
 
   .image_container {

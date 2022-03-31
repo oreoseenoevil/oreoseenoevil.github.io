@@ -27,15 +27,7 @@
   }
 
   &_span {
-    font-size: 2rem;
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
     font-weight: 300;
-
-    @media (max-width: 500px) {
-      font-size: 1.75rem;
-    }
-
-    @media (max-width: 4750px) {
-      font-size: 1.35rem;
-    }
   }
 }
