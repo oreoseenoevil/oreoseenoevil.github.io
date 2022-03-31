@@ -18,32 +18,32 @@ export interface Tools {
 }
 
 export const tools: Tools[] = [
-  { link: 'https:html.com', src: html, alt: 'html5', title: 'HTML5' },
-  { link: 'https:sass-lang.com', src: sass, alt: 'sass', title: 'Sass' },
+  { link: 'https://html.com', src: html, alt: 'html5', title: 'HTML5' },
+  { link: 'https://sass-lang.com', src: sass, alt: 'sass', title: 'Sass' },
   {
-    link: 'https:www.javascript.com',
+    link: 'https://www.javascript.com',
     src: javascript,
 
     alt: 'javascript',
     title: 'Javascript'
   },
   {
-    link: 'https:www.typescriptlang.org',
+    link: 'https://www.typescriptlang.org',
     src: typescript,
 
     alt: 'html5',
     title: 'TypeScript'
   },
-  { link: 'https:www.javascript.com', src: nodejs, alt: 'nodejs', title: 'Nodejs' },
-  { link: 'https:reactjs.org', src: reactjs, alt: 'react', title: 'React' },
-  { link: 'https:redux.js.org', src: redux, alt: 'redux', title: 'Redux' },
+  { link: 'https://www.javascript.com', src: nodejs, alt: 'nodejs', title: 'Nodejs' },
+  { link: 'https://reactjs.org', src: reactjs, alt: 'react', title: 'React' },
+  { link: 'https://redux.js.org', src: redux, alt: 'redux', title: 'Redux' },
   {
-    link: 'https:webpack.js.org',
+    link: 'https://webpack.js.org',
     src: webpack,
     alt: 'webpack',
     title: 'Webpack'
   },
-  { link: 'https:code.visualstudio.com', src: vscode, alt: 'vscode', title: 'VsCode' },
-  { link: 'https:git-scm.com', src: git, alt: 'git', title: 'Git' },
-  { link: 'https:aws.amazon.com', src: aws, alt: 'git', title: 'Git' }
+  { link: 'https://code.visualstudio.com', src: vscode, alt: 'vscode', title: 'VsCode' },
+  { link: 'https://git-scm.com', src: git, alt: 'git', title: 'Git' },
+  { link: 'https://aws.amazon.com', src: aws, alt: 'git', title: 'Git' }
 ];
