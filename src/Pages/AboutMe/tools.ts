@@ -34,7 +34,7 @@ export const tools: Tools[] = [
     alt: 'html5',
     title: 'TypeScript'
   },
-  { link: 'https://www.javascript.com', src: nodejs, alt: 'nodejs', title: 'Nodejs' },
+  { link: 'https://nodejs.org', src: nodejs, alt: 'nodejs', title: 'Nodejs' },
   { link: 'https://reactjs.org', src: reactjs, alt: 'react', title: 'React' },
   { link: 'https://redux.js.org', src: redux, alt: 'redux', title: 'Redux' },
   {
