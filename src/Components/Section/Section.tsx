@@ -4,7 +4,7 @@ import useClassNames from 'Hooks/useClassNames';
 import styles from './Section.module.scss';
 
 interface SectionProps {
-  id: string;
+  id?: string;
   className?: string;
   animation?: string;
 }
