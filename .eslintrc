@@ -21,7 +21,6 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "ignorePatterns": ["jest.config.js"],
   "plugins": ["react", "react-hooks", "@typescript-eslint", "import"],
   "rules": {
     "prettier/prettier": [
