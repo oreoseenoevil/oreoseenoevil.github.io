@@ -8,7 +8,7 @@ interface SkeletonLoaderProps {
 
 export const SkeletonLoader: FC<SkeletonLoaderProps> = ({ children, height = '100%', width = '100%' }) => {
   return (
-    <ContentLoader backgroundColor="#f0f0f0" foregroundColor="#dedede" height={height} width={width}>
+    <ContentLoader backgroundColor="#d9d9d9" foregroundColor="#ededed" height={height} width={width} speed={2}>
       {children}
     </ContentLoader>
   );
