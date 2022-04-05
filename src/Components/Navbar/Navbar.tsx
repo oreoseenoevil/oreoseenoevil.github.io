@@ -6,6 +6,7 @@ import { useMode } from 'Hooks/useMode';
 import useClassNames from 'Hooks/useClassNames';
 import { useMediaQuery } from 'react-responsive';
 import { SlideToggle } from 'Components/SlideToggle';
+import { useTitle } from 'react-use';
 import styles from './Navbar.module.scss';
 
 export const Navbar: FC = () => {
@@ -13,7 +14,9 @@ export const Navbar: FC = () => {
   const [onScroll, setOnScroll] = useState(true);
   const [isActive, setIsActive] = useState(false);
   const [lastScroll, setLastScroll] = useState(0);
+  const [path, setPath] = useState('Portfolio');
   const [color, setColor] = useState(false);
+  useTitle(`${path} | Jessie Tarrosa`);
 
   const burger = useMediaQuery({ query: '(max-width: 800px)' });
 
@@ -38,6 +41,16 @@ export const Navbar: FC = () => {
     setDarkMode(value);
     setIsActive(false);
   };
+
+  const handleClick = useCallback((path: string) => {
+    let newPath = path;
+    if (newPath === '' || newPath === 'Home') {
+      newPath = 'Portfolio';
+    }
+
+    setPath(newPath);
+    setIsActive(false);
+  }, []);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -65,7 +78,7 @@ export const Navbar: FC = () => {
     <nav className={useClassNames(styles.navbar, !onScroll && styles.navbar_hidden, color && styles.navbar_color)}>
       <header className={styles.header}>
         <div className={styles.logo}>
-          <a href="#intro" className={styles.logo_link}>
+          <a href="#intro" className={styles.logo_link} onClick={() => handleClick('Portfolio')}>
             JT.
           </a>
         </div>
@@ -82,7 +95,7 @@ export const Navbar: FC = () => {
         <ul className={useClassNames(styles.menu)} style={{ right: burger && isActive ? 0 : '-100%' }}>
           {navLinks.map((item, i) => (
             <li key={i} className={styles.menu_item}>
-              <a href={item.path} className={styles.link} onClick={() => setIsActive(false)}>
+              <a href={item.path} className={styles.link} onClick={() => handleClick(item.name)}>
                 {item.name}
               </a>
             </li>
