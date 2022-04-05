@@ -79,6 +79,7 @@ $size: 170px; // (Fully responsive)
   width: 31%;
   background: var(--foreground);
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  overflow: hidden;
 
   // Eyelids
   &::after {
@@ -90,6 +91,7 @@ $size: 170px; // (Fully responsive)
     width: 100%;
     border-radius: 0 0 50% 50% / 0 0 40% 40%;
     background: var(--background);
+    z-index: 100;
     animation: blink 4s infinite ease-in;
   }
 
@@ -147,6 +149,7 @@ $size: 170px; // (Fully responsive)
   height: 100%;
   width: 100%;
   overflow: hidden;
+  z-index: 100;
 }
 
 // Pupils
@@ -157,6 +160,8 @@ $size: 170px; // (Fully responsive)
   width: 20%;
   background: var(--background);
   border-radius: 50%;
+  border: 1px solid var(--grey-70);
+  z-index: 1;
 
   .eye_left & {
     right: 30%;
@@ -176,6 +181,7 @@ $size: 170px; // (Fully responsive)
     width: 35%;
     border-radius: 50%;
     background: var(--foreground);
+    border: 1px solid var(--grey-50);
   }
 }
 
