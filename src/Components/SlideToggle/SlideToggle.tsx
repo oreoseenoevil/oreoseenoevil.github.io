@@ -34,6 +34,7 @@ export const SlideToggle: FC<SlideToggleProps> = ({
         value && 'SlideToggle_track_active',
         className
       )}
+      data-testid="slide-toggle"
     >
       <div className={`${styles.thumb} SlideToggle_thumb`}>{children}</div>
     </button>
