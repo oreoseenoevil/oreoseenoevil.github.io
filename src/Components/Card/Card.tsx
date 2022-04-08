@@ -19,7 +19,12 @@ export const Card: FC<CardProps> = ({ name, src }) => {
             <rect x="0" y="0" rx="0" ry="0" width="100%" height="100%" />
           </SkeletonLoader>
         )}
-        <LazyLoadImage src={src} alt={name} afterLoad={() => setOnLoad(false)} />
+        <LazyLoadImage
+          src={src}
+          alt={name}
+          afterLoad={() => setOnLoad(false)}
+          style={onLoad ? { display: 'none' } : {}}
+        />
       </div>
       <h1 className={styles.card_name}>{name}</h1>
     </div>
