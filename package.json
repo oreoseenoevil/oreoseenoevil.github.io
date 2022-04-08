@@ -1,5 +1,5 @@
 {
-  "name": "ts-react-base",
+  "name": "portfolio-jessiet",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,6 +21,7 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-lazy-load-image-component": "^1.5.4",
+    "react-multi-carousel": "^2.8.0",
     "react-responsive": "^9.0.0-beta.6",
     "react-scripts": "5.0.0",
     "react-tsparticles": "^1.42.4",
