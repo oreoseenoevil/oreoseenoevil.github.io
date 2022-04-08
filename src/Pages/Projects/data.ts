@@ -4,6 +4,7 @@ import mlops from 'assets/image/mlops.png';
 import futureOrg from 'assets/image/future-org.png';
 import humanai from 'assets/image/human-ai-hub.png';
 import data2cloud from 'assets/image/data2cloud.png';
+import landasia from 'assets/image/landasia.png';
 
 export const data = [
   {
@@ -34,6 +35,17 @@ export const data = [
       {
         name: 'Data2Cloud',
         src: data2cloud
+      }
+    ]
+  },
+  {
+    name: 'Landasia',
+    role: 'Web Developer',
+    link: 'https://landasia.ph/',
+    projects: [
+      {
+        name: 'Landasia',
+        src: landasia
       }
     ]
   }

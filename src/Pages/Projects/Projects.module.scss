@@ -82,14 +82,6 @@
       .cards {
         width: 100%;
         flex: 4;
-        display: grid;
-        align-items: center;
-        gap: 1rem;
-        grid-template-columns: repeat(3, 1fr);
-
-        @media (max-width: 450px) {
-          grid-template-columns: repeat(2, 1fr);
-        }
       }
     }
   }

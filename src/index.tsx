@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import 'normalize.css';
 import 'Styles/main.scss';
+import 'react-multi-carousel/lib/styles.css';
 
 import { App } from 'UI/App';
 import { ModeContextProvider } from 'Context/Mode';

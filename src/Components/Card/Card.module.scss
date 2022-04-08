@@ -15,6 +15,8 @@
     transform: scale(1.05);
   }
 
+  margin: 2rem;
+
   &_name {
     font-size: clamp(1.35rem, 3vw, 2rem);
   }
@@ -22,7 +24,6 @@
   .image_container {
     display: block;
     width: 100%;
-    height: 15rem;
 
     img {
       width: 100%;
