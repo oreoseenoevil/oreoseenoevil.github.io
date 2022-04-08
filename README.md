@@ -11,7 +11,7 @@ Node (v14.18.1 is recommended)
 To clone repository first you have to install git
 
 ```
-git clone https://github.com/oreoseenoevil/ts-react-base.git
+git clone https://github.com/oreoseenoevil/oreoseenoevil.github.io.git
 ```
 
 ## Installation
