@@ -5,7 +5,7 @@
   flex-direction: column;
   background: var(--foreground);
   color: var(--background);
-  border-radius: 1rem;
+  border-radius: 0.25rem;
   overflow: hidden;
   padding: 1rem 0.25rem 0.25rem;
 
@@ -22,6 +22,7 @@
   .image_container {
     display: block;
     width: 100%;
+    height: 15rem;
 
     img {
       width: 100%;
