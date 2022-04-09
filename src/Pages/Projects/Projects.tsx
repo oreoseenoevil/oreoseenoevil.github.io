@@ -32,6 +32,7 @@ export const Projects: FC = () => {
               additionalTransfrom={0}
               arrows
               centerMode={false}
+              autoPlay={false}
               className={styles.cards}
               containerClass="container"
               dotListClass=""
