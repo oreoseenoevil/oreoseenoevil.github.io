@@ -75,7 +75,7 @@ export const Projects: FC = () => {
               swipeable
             >
               {item.projects.map((project, i) => (
-                <Card src={project.src} name={project.name} key={i} />
+                <Card src={project.src} name={project.name} key={i} placeholderSrc={project.lowRes} />
               ))}
             </Carousel>
           </div>

@@ -6,6 +6,14 @@ import humanai from 'assets/image/human-ai-hub.png';
 import data2cloud from 'assets/image/data2cloud.png';
 import landasia from 'assets/image/landasia.png';
 
+import skillaiLow from 'assets/image/skill-ai-low-res.png';
+import connectorStoreLow from 'assets/image/connector-store-low-res.png';
+import mlopsLow from 'assets/image/mlops-low-res.png';
+import futureOrgLow from 'assets/image/future-org-low-res.png';
+import humanaiLow from 'assets/image/human-ai-hub-low-res.png';
+import data2cloudLow from 'assets/image/data2cloud-low-res.png';
+import landasiaLow from 'assets/image/landasia-low-res.png';
+
 export const data = [
   {
     name: 'Solution.AI',
@@ -14,27 +22,33 @@ export const data = [
     projects: [
       {
         name: 'Skill.AI',
-        src: skillai
+        src: skillai,
+        lowRes: skillaiLow
       },
       {
         name: 'Connector Store',
-        src: connectorStore
+        src: connectorStore,
+        lowRes: connectorStoreLow
       },
       {
         name: 'MLOps',
-        src: mlops
+        src: mlops,
+        lowRes: mlopsLow
       },
       {
         name: 'Future Org',
-        src: futureOrg
+        src: futureOrg,
+        lowRes: futureOrgLow
       },
       {
         name: 'Human.AI Hub',
-        src: humanai
+        src: humanai,
+        lowRes: humanaiLow
       },
       {
         name: 'Data2Cloud',
-        src: data2cloud
+        src: data2cloud,
+        lowRes: data2cloudLow
       }
     ]
   },
@@ -45,7 +59,8 @@ export const data = [
     projects: [
       {
         name: 'Landasia',
-        src: landasia
+        src: landasia,
+        lowRes: landasiaLow
       }
     ]
   }

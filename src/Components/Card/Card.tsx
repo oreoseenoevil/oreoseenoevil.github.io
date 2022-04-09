@@ -6,13 +6,14 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 interface CardProps {
   name: string;
   src?: string;
+  placeholderSrc?: string;
 }
 
-export const Card: FC<CardProps> = ({ name, src }) => {
+export const Card: FC<CardProps> = ({ name, src, placeholderSrc }) => {
   return (
     <div className={styles.card}>
       <div className={styles.image_container}>
-        <LazyLoadImage src={src} alt={name} effect="blur" />
+        <LazyLoadImage src={src} alt={name} effect="blur" placeholderSrc={placeholderSrc} />
       </div>
       <h1 className={styles.card_name}>{name}</h1>
     </div>
