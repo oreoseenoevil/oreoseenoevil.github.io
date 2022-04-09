@@ -1,16 +1,23 @@
 {
   "files": {
     "main.css": "/static/css/main.51e7f6bf.css",
-    "main.js": "/static/js/main.2fa0d2f4.js",
+    "main.js": "/static/js/main.f2b9834d.js",
     "static/js/787.52439ddb.chunk.js": "/static/js/787.52439ddb.chunk.js",
-    "static/media/mlops.png": "/static/media/mlops.a70b2513c91f272b0504.png",
-    "static/media/connector-store.png": "/static/media/connector-store.7cbb0f32fd71f9ef78ce.png",
-    "static/media/human-ai-hub.png": "/static/media/human-ai-hub.d732774e9c89e3026124.png",
-    "static/media/data2cloud.png": "/static/media/data2cloud.ee7128161720d56964ac.png",
+    "static/media/mlops.png": "/static/media/mlops.58378cbb07eeec0006da.png",
+    "static/media/connector-store.png": "/static/media/connector-store.7e853210c6115bd7bb0a.png",
+    "static/media/human-ai-hub.png": "/static/media/human-ai-hub.319f009bee1b0328d1fd.png",
+    "static/media/data2cloud.png": "/static/media/data2cloud.21306a5853ff7c841a45.png",
     "static/media/resume.pdf": "/static/media/resume.201b54d3f19210c0e2ac.pdf",
-    "static/media/skill-ai.png": "/static/media/skill-ai.4d03833f5e5fa626e600.png",
-    "static/media/landasia.png": "/static/media/landasia.949f701903aeb5019836.png",
     "static/media/future-org.png": "/static/media/future-org.b18b2ce6eb09384cf8ed.png",
+    "static/media/landasia.png": "/static/media/landasia.f26e0f0f014701f80f64.png",
+    "static/media/skill-ai.png": "/static/media/skill-ai.021e9f0e71fec1fa44df.png",
+    "static/media/mlops-low-res.png": "/static/media/mlops-low-res.9545b17d581dfc79e43c.png",
+    "static/media/connector-store-low-res.png": "/static/media/connector-store-low-res.7424d4f234a57eb9e637.png",
+    "static/media/human-ai-hub-low-res.png": "/static/media/human-ai-hub-low-res.74908628d01241194cb1.png",
+    "static/media/data2cloud-low-res.png": "/static/media/data2cloud-low-res.df03b6f675d0298c762a.png",
+    "static/media/future-org-low-res.png": "/static/media/future-org-low-res.9b56d5dee5d3a7f1dad5.png",
+    "static/media/landasia-low-res.png": "/static/media/landasia-low-res.d539a7add21d3384e3a6.png",
+    "static/media/skill-ai-low-res.png": "/static/media/skill-ai-low-res.fcaa5fe70ba090aa0821.png",
     "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/nodejs-1.svg": "/static/media/nodejs-1.52cbf9a89f44655c0375b9e9f88bf9c5.svg",
@@ -28,11 +35,11 @@
     "index.html": "/index.html",
     "static/media/html-1.svg": "/static/media/html-1.f318c8b1d5945fa9adc827ae94849cb1.svg",
     "main.51e7f6bf.css.map": "/static/css/main.51e7f6bf.css.map",
-    "main.2fa0d2f4.js.map": "/static/js/main.2fa0d2f4.js.map",
+    "main.f2b9834d.js.map": "/static/js/main.f2b9834d.js.map",
     "787.52439ddb.chunk.js.map": "/static/js/787.52439ddb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.51e7f6bf.css",
-    "static/js/main.2fa0d2f4.js"
+    "static/js/main.f2b9834d.js"
   ]
 }
