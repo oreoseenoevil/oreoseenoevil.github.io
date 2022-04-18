@@ -1,4 +1,4 @@
-import { render, screen } from 'test-utils';
+import { render, screen, waitFor } from 'test-utils';
 import userEvent from '@testing-library/user-event';
 import { App } from '.';
 
@@ -8,7 +8,7 @@ it('renders with out crashing', () => {
   expect(container.firstChild).toBeTruthy();
 });
 
-it('switch theme to dark and light mode', () => {
+it('switch theme to dark and light mode', async () => {
   const { container } = render(<App />);
 
   const slideToggle = screen.getByTestId('slide-toggle');
@@ -16,8 +16,8 @@ it('switch theme to dark and light mode', () => {
 
   expect(container.firstChild).not.toHaveClass('dark_mode');
   expect(container.firstChild).toHaveClass('light_mode');
-  userEvent.click(slideToggle);
+  await waitFor(() => userEvent.click(slideToggle));
 
-  expect(container.firstChild).not.toHaveClass('light_mode');
-  expect(container.firstChild).toHaveClass('dark_mode');
+  await waitFor(() => expect(container.firstChild).not.toHaveClass('light_mode'));
+  await waitFor(() => expect(container.firstChild).toHaveClass('dark_mode'));
 });
