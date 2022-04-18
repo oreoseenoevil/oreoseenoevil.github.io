@@ -6,6 +6,7 @@ import styles from './LinkButton.module.scss';
 interface LinkButtonProps {
   link: string;
   className?: string;
+  children?: React.ReactNode;
 }
 
 export const LinkButton: FC<LinkButtonProps> = ({ children, link, className }) => {

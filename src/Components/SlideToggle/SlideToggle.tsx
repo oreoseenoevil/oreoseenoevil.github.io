@@ -8,6 +8,7 @@ interface SlideToggleProps {
   onChange?: (value: boolean) => unknown;
   rightToLeft?: boolean;
   className?: string;
+  children?: React.ReactNode;
 }
 
 export const SlideToggle: FC<SlideToggleProps> = ({

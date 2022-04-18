@@ -4,6 +4,7 @@ import ContentLoader from 'react-content-loader';
 interface SkeletonLoaderProps {
   height?: number | string;
   width?: number | string;
+  children?: React.ReactNode;
 }
 
 export const SkeletonLoader: FC<SkeletonLoaderProps> = ({ children, height = '100%', width = '100%' }) => {

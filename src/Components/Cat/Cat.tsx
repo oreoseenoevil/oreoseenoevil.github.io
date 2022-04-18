@@ -2,11 +2,16 @@ import { useCallback, useEffect, useState } from 'react';
 import useClassNames from 'Hooks/useClassNames';
 import styles from './Cat.module.scss';
 
+type UserMouseEvent = {
+  clientX: number;
+  clientY: number;
+};
+
 export const Cat = () => {
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
 
-  const eyeBall = useCallback((event) => {
+  const eyeBall = useCallback((event: UserMouseEvent) => {
     const posX = (event.clientX * 100) / window.innerWidth;
     const posY = (event.clientY * 100) / window.innerHeight;
 

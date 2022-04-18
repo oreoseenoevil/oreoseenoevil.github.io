@@ -7,13 +7,17 @@ interface ModeContextProps {
   darkModeClass: string;
 }
 
+interface ModeContextProviderProps {
+  children: React.ReactNode;
+}
+
 export const ModeContext = createContext<ModeContextProps>({
   darkMode: false,
   setDarkMode: () => {},
   darkModeClass: 'light_mode'
 });
 
-export const ModeContextProvider: FC = ({ children }) => {
+export const ModeContextProvider: FC<ModeContextProviderProps> = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
 
   const darkModeClass = useMemo(() => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
 import 'normalize.css';
 import 'Styles/main.scss';
@@ -9,13 +9,16 @@ import { App } from 'UI/App';
 import { ModeContextProvider } from 'Context/Mode';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
+const rootElement = document.getElementById('root');
+
+const root = ReactDOM.createRoot(rootElement as Element);
+
+root.render(
   <React.StrictMode>
     <ModeContextProvider>
       <App />
     </ModeContextProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

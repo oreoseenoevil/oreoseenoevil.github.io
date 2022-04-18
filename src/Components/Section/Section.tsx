@@ -7,6 +7,7 @@ interface SectionProps {
   id?: string;
   className?: string;
   animation?: string;
+  children?: React.ReactNode;
 }
 
 export const Section: FC<SectionProps> = ({ children, id, className, animation = 'zoom-in' }) => {
