@@ -4,6 +4,7 @@ import Typewriter from 'typewriter-effect';
 import { roles } from 'Constants';
 import { IconType } from 'react-icons';
 import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { SiCodewars } from 'react-icons/si';
 import man from 'assets/icons/man.svg';
 
 import { LinkButton } from 'Components/LinkButton';
@@ -37,6 +38,11 @@ const socials: Socials[] = [
     icon: FaInstagram,
     link: 'https://www.instagram.com/oreoseenoevil/',
     name: 'instagram'
+  },
+  {
+    icon: SiCodewars,
+    link: 'https://www.codewars.com/users/oreoseenoevil',
+    name: 'codewars'
   }
 ];
 
