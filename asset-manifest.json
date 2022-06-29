@@ -1,13 +1,12 @@
 {
   "files": {
     "main.css": "/static/css/main.7eae0f37.css",
-    "main.js": "/static/js/main.0aca0085.js",
+    "main.js": "/static/js/main.347c5473.js",
     "static/js/787.52439ddb.chunk.js": "/static/js/787.52439ddb.chunk.js",
     "static/media/mlops.png": "/static/media/mlops.58378cbb07eeec0006da.png",
     "static/media/connector-store.png": "/static/media/connector-store.7e853210c6115bd7bb0a.png",
     "static/media/human-ai-hub.png": "/static/media/human-ai-hub.319f009bee1b0328d1fd.png",
     "static/media/data2cloud.png": "/static/media/data2cloud.21306a5853ff7c841a45.png",
-    "static/media/resume.pdf": "/static/media/resume.201b54d3f19210c0e2ac.pdf",
     "static/media/future-org.png": "/static/media/future-org.b18b2ce6eb09384cf8ed.png",
     "static/media/landasia.png": "/static/media/landasia.f26e0f0f014701f80f64.png",
     "static/media/skill-ai.png": "/static/media/skill-ai.021e9f0e71fec1fa44df.png",
@@ -15,6 +14,7 @@
     "static/media/connector-store-low-res.png": "/static/media/connector-store-low-res.7424d4f234a57eb9e637.png",
     "static/media/human-ai-hub-low-res.png": "/static/media/human-ai-hub-low-res.74908628d01241194cb1.png",
     "static/media/data2cloud-low-res.png": "/static/media/data2cloud-low-res.df03b6f675d0298c762a.png",
+    "static/media/resume.pdf": "/static/media/resume.bab7c96a9ef3c0e1176e.pdf",
     "static/media/future-org-low-res.png": "/static/media/future-org-low-res.9b56d5dee5d3a7f1dad5.png",
     "static/media/landasia-low-res.png": "/static/media/landasia-low-res.d539a7add21d3384e3a6.png",
     "static/media/skill-ai-low-res.png": "/static/media/skill-ai-low-res.fcaa5fe70ba090aa0821.png",
@@ -35,11 +35,11 @@
     "index.html": "/index.html",
     "static/media/html-1.svg": "/static/media/html-1.f318c8b1d5945fa9adc827ae94849cb1.svg",
     "main.7eae0f37.css.map": "/static/css/main.7eae0f37.css.map",
-    "main.0aca0085.js.map": "/static/js/main.0aca0085.js.map",
+    "main.347c5473.js.map": "/static/js/main.347c5473.js.map",
     "787.52439ddb.chunk.js.map": "/static/js/787.52439ddb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7eae0f37.css",
-    "static/js/main.0aca0085.js"
+    "static/js/main.347c5473.js"
   ]
 }
