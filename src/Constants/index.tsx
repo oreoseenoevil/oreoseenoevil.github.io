@@ -18,4 +18,10 @@ export const navLinks: NavLinks[] = [
   }
 ];
 
-export const roles: string[] = ['Front End Developer', 'React Developer', 'Web Developer', 'Javascript Developer'];
+export const roles: string[] = [
+  'Front End Developer',
+  'React Developer',
+  'Web Developer',
+  'Javascript Developer',
+  'Web3 Developer'
+];

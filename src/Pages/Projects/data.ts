@@ -14,7 +14,43 @@ import humanaiLow from 'assets/image/human-ai-hub-low-res.png';
 import data2cloudLow from 'assets/image/data2cloud-low-res.png';
 import landasiaLow from 'assets/image/landasia-low-res.png';
 
+import permission from 'assets/image/permission.png';
+import permissionLow from 'assets/image/permission-low-res.png';
+import permLogin from 'assets/image/perm-login.png';
+import permLoginLow from 'assets/image/perm-login-low-res.png';
+import dailyEarn from 'assets/image/daily-earn.png';
+import dailyEarnLow from 'assets/image/daily-earn-low-res.png';
+import wallet from 'assets/image/wallet.png';
+import walletLow from 'assets/image/wallet-low-res.png';
+
 export const data = [
+  {
+    name: 'Permission',
+    role: 'Software Developer',
+    link: 'https://permission.io/',
+    projects: [
+      {
+        name: 'Permission.io',
+        src: permission,
+        lowRes: permissionLow
+      },
+      {
+        name: 'my.permission.io',
+        src: permLogin,
+        lowRes: permLoginLow
+      },
+      {
+        name: 'Daily Earn',
+        src: dailyEarn,
+        lowRes: dailyEarnLow
+      },
+      {
+        name: 'Wallet',
+        src: wallet,
+        lowRes: walletLow
+      }
+    ]
+  },
   {
     name: 'Solution.AI',
     role: 'React Developer',

@@ -12,11 +12,16 @@ export const AboutMe: FC = () => {
       <div className={styles.about_container}>
         <h1>About Me</h1>
         <h3>
-          Jessie Tarrosa is a React Developer at CoDev. With over 3 years of experience in web development and building
-          tools to help business grow. In his previous role, he is an Advanced App Engineering Analyst. He is now
-          working at CoDev.
+          Jessie Tarrosa is a highly experienced Software Developer with over 4 years of experience in developing
+          software and tools to help businesses grow. He is currently working at CoDev, and has previously held a role
+          as an advanced app engineering analyst and full-stack developer. In his free time, he stays current on the
+          latest technologies by reading documentation and staying active.
         </h3>
-        <h3>He spends his free time reading, watching movies and working out whenever he&apos;s not writing code.</h3>
+        <h3>
+          Jessie has a strong background in core programming languages, frameworks, and databases, as well as additional
+          skills in serverless development, DevOps, AWS, SaaS, front-end technologies, and API integration. He also has
+          experience with various version control systems, project management tools and API testing tools.
+        </h3>
         <h3>These are the tools that he&apos;s been using over the past few years in web development.</h3>
         <div className={styles.tools}>
           {tools.map((item: Tools, i) => (

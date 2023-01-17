@@ -26,9 +26,9 @@ npm install
 npm start
 ```
 
-## [Demo](https://jessiet.dev/react-crypto-wallet-ui/)
+## [Demo](https://jessiet.dev/)
 
-You can access the project to this site: https://jessiet.dev/react-crypto-wallet-ui/
+You can access the project to this site: https://jessiet.dev/
 
 ## Testing
 
@@ -43,7 +43,3 @@ npm run test
 - [Node](https://nodejs.org/en/)
 
 - [React](https://reactjs.org/)
-
-- [Axios](https://axios-http.com/docs/intro)
-
-- [PolygonScan](https://api.polygonscan.com/)
