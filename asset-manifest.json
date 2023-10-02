@@ -1,28 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.7eae0f37.css",
-    "main.js": "/static/js/main.1d6d7408.js",
+    "main.js": "/static/js/main.b51781b7.js",
     "static/js/787.52439ddb.chunk.js": "/static/js/787.52439ddb.chunk.js",
-    "static/media/permission.png": "/static/media/permission.44c13d2ae244ceca8a90.png",
     "static/media/mlops.png": "/static/media/mlops.58378cbb07eeec0006da.png",
     "static/media/connector-store.png": "/static/media/connector-store.7e853210c6115bd7bb0a.png",
     "static/media/human-ai-hub.png": "/static/media/human-ai-hub.319f009bee1b0328d1fd.png",
     "static/media/data2cloud.png": "/static/media/data2cloud.21306a5853ff7c841a45.png",
-    "static/media/perm-login.png": "/static/media/perm-login.5560f66916112ce9b1fb.png",
-    "static/media/permission-low-res.png": "/static/media/permission-low-res.b6923458200839cec09d.png",
-    "static/media/wallet.png": "/static/media/wallet.932917ce5e487bda5bf0.png",
-    "static/media/daily-earn.png": "/static/media/daily-earn.ec22bf96afc00415012f.png",
-    "static/media/perm-login-low-res.png": "/static/media/perm-login-low-res.e0c9169d8fcab63131e1.png",
     "static/media/future-org.png": "/static/media/future-org.b18b2ce6eb09384cf8ed.png",
     "static/media/landasia.png": "/static/media/landasia.f26e0f0f014701f80f64.png",
     "static/media/skill-ai.png": "/static/media/skill-ai.021e9f0e71fec1fa44df.png",
     "static/media/mlops-low-res.png": "/static/media/mlops-low-res.9545b17d581dfc79e43c.png",
     "static/media/connector-store-low-res.png": "/static/media/connector-store-low-res.7424d4f234a57eb9e637.png",
     "static/media/human-ai-hub-low-res.png": "/static/media/human-ai-hub-low-res.74908628d01241194cb1.png",
-    "static/media/daily-earn-low-res.png": "/static/media/daily-earn-low-res.790bdc49ccc819635392.png",
-    "static/media/resume.pdf": "/static/media/resume.1c4d851a4fd49f5e7522.pdf",
     "static/media/data2cloud-low-res.png": "/static/media/data2cloud-low-res.df03b6f675d0298c762a.png",
-    "static/media/wallet-low-res.png": "/static/media/wallet-low-res.c26d2f2138aa24834b69.png",
+    "static/media/resume.pdf": "/static/media/resume.022b62a010a05aeda214.pdf",
     "static/media/future-org-low-res.png": "/static/media/future-org-low-res.9b56d5dee5d3a7f1dad5.png",
     "static/media/landasia-low-res.png": "/static/media/landasia-low-res.d539a7add21d3384e3a6.png",
     "static/media/skill-ai-low-res.png": "/static/media/skill-ai-low-res.fcaa5fe70ba090aa0821.png",
@@ -43,11 +35,11 @@
     "index.html": "/index.html",
     "static/media/html-1.svg": "/static/media/html-1.f318c8b1d5945fa9adc827ae94849cb1.svg",
     "main.7eae0f37.css.map": "/static/css/main.7eae0f37.css.map",
-    "main.1d6d7408.js.map": "/static/js/main.1d6d7408.js.map",
+    "main.b51781b7.js.map": "/static/js/main.b51781b7.js.map",
     "787.52439ddb.chunk.js.map": "/static/js/787.52439ddb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7eae0f37.css",
-    "static/js/main.1d6d7408.js"
+    "static/js/main.b51781b7.js"
   ]
 }
