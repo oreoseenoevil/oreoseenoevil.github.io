@@ -12,15 +12,23 @@ export const AboutMe: FC = () => {
       <div className={styles.about_container}>
         <h1>About Me</h1>
         <h3>
-          Jessie Tarrosa is a highly experienced Software Developer with over 4 years of experience in developing
-          software and tools to help businesses grow. He is currently working at CoDev, and has previously held a role
-          as an advanced app engineering analyst and full-stack developer. In his free time, he stays current on the
-          latest technologies by reading documentation and staying active.
+          As an experienced full-stack developer with five years of hands-on experience, I bring a versatile skill set
+          to the table. My expertise spans both front-end and back-end technologies, making me a valuable asset to any
+          development team. On the front-end, I have a strong command of JavaScript, React, and Redux, enabling me to
+          design and implement dynamic and responsive user interfaces. Proficiency in front-end technologies such as CSS
+          and HTML ensures that I can create visually appealing and user-friendly web applications.
         </h3>
         <h3>
-          Jessie has a strong background in core programming languages, frameworks, and databases, as well as additional
-          skills in serverless development, DevOps, AWS, SaaS, front-end technologies, and API integration. He also has
-          experience with various version control systems, project management tools and API testing tools.
+          On the back-end, I excel in building scalable and cost-effective systems, with a deep understanding of
+          databases and effective data integration. I am also well-versed in cloud hosting and deployment strategies,
+          ensuring that applications I work on are not only functional but also performant and easily scalable.
+          Additionally, I am skilled in project management, utilizing collaboration tools like Git, GitHub, and JIRA.
+        </h3>
+        <h3>
+          My commitment to delivering high-quality, efficient, and maintainable code is unwavering. I thrive on
+          problem-solving and collaboration, always eager to embrace emerging technologies to enhance the quality of my
+          work. With a proven track record of success, I am dedicated to continuous growth and development, constantly
+          seeking opportunities to expand my skills and contribute to innovative full-stack projects.
         </h3>
         <h3>These are the tools that he&apos;s been using over the past few years in web development.</h3>
         <div className={styles.tools}>

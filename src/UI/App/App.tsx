@@ -3,7 +3,7 @@ import { Navbar } from 'Components/Navbar';
 import { Projects } from 'Pages/Projects';
 import { AboutMe } from 'Pages/AboutMe';
 import { Intro } from 'Pages/Intro';
-import { ParticlesBG } from 'Components/ParticlesBG';
+// import { ParticlesBG } from 'Components/ParticlesBG';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -36,7 +36,7 @@ export const App = () => {
         <Projects />
       </div>
       <Footer />
-      <ParticlesBG />
+      {/* <ParticlesBG /> */}
     </div>
   );
 };

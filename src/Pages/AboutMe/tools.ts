@@ -9,6 +9,7 @@ import webpack from 'assets/icons/webpack-icon.svg';
 import vscode from 'assets/icons/vscode.svg';
 import git from 'assets/icons/git-icon.svg';
 import aws from 'assets/icons/aws-logo.svg';
+import stripe from 'assets/icons/stripe.svg';
 
 export interface Tools {
   link: string;
@@ -45,5 +46,11 @@ export const tools: Tools[] = [
   },
   { link: 'https://code.visualstudio.com', src: vscode, alt: 'vscode', title: 'VsCode' },
   { link: 'https://git-scm.com', src: git, alt: 'git', title: 'Git' },
-  { link: 'https://aws.amazon.com', src: aws, alt: 'git', title: 'Git' }
+  { link: 'https://aws.amazon.com', src: aws, alt: 'git', title: 'Git' },
+  {
+    link: 'https://stripe.com',
+    src: stripe,
+    alt: 'stripe',
+    title: 'Stripe'
+  }
 ];

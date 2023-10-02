@@ -5,7 +5,7 @@ import { roles } from 'Constants';
 import { IconType } from 'react-icons';
 import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { SiCodewars } from 'react-icons/si';
-import man from 'assets/icons/man.svg';
+import man from 'assets/image/jessie.png';
 
 import { LinkButton } from 'Components/LinkButton';
 import { useMode } from 'Hooks/useMode';

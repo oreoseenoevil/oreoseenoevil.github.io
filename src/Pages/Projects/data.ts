@@ -22,11 +22,24 @@ import dailyEarn from 'assets/image/daily-earn.png';
 import dailyEarnLow from 'assets/image/daily-earn-low-res.png';
 import wallet from 'assets/image/wallet.png';
 import walletLow from 'assets/image/wallet-low-res.png';
+import pdAdmin from 'assets/image/pd-admin.png';
 
 export const data = [
   {
+    name: 'Pure Desire Ministries International',
+    role: 'Full Stack Developer',
+    link: 'https://puredesire.org/',
+    projects: [
+      {
+        name: 'Pure Desire Application',
+        src: pdAdmin,
+        lowRes: pdAdmin
+      }
+    ]
+  },
+  {
     name: 'Permission',
-    role: 'Software Developer',
+    role: 'Full Stack Developer',
     link: 'https://permission.io/',
     projects: [
       {
@@ -53,7 +66,7 @@ export const data = [
   },
   {
     name: 'Solution.AI',
-    role: 'React Developer',
+    role: 'Full Stack Developer',
     link: 'https://www.accenture.com/us-en/services/applied-intelligence/solutions-ai-talent-skilling',
     projects: [
       {
