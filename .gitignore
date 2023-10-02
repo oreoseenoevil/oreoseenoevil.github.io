@@ -116,6 +116,7 @@ sketch
 *.sass.map
 *.scss.map
 
+build
 build/
 
 # End of https://www.gitignore.io/api/node,sass,react
