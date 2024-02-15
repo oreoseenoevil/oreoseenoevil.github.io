@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.01b2215c.css",
-    "main.js": "/static/js/main.64bdf33f.js",
+    "main.css": "/static/css/main.fc072c75.css",
+    "main.js": "/static/js/main.bee54c64.js",
     "static/js/787.52439ddb.chunk.js": "/static/js/787.52439ddb.chunk.js",
     "static/media/permission.png": "/static/media/permission.44c13d2ae244ceca8a90.png",
     "static/media/mlops.png": "/static/media/mlops.58378cbb07eeec0006da.png",
@@ -32,24 +32,36 @@
     "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/nodejs-1.svg": "/static/media/nodejs-1.52cbf9a89f44655c0375b9e9f88bf9c5.svg",
     "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
+    "static/media/postgresql.svg": "/static/media/postgresql.ae92b576b8ea41666538c0756df27969.svg",
+    "static/media/google.svg": "/static/media/google.ef647c8527c572f66d007cecee12a913.svg",
     "static/media/node-sass.svg": "/static/media/node-sass.3b8b17be11b780a4df85e82faba6dee4.svg",
+    "static/media/openai.svg": "/static/media/openai.c1f4111ba5bc0515a90389a5311e2e7a.svg",
+    "static/media/mysql.svg": "/static/media/mysql.0697e026464104aea8919845703174b9.svg",
     "static/media/reactjs.svg": "/static/media/reactjs.e68b35f4774979ae220b1d5d7b345b00.svg",
+    "static/media/docker.svg": "/static/media/docker.48b052bd2a48f70f143b42a92fd9aebc.svg",
     "static/media/redux.svg": "/static/media/redux.0e4fb1c819ac4c060c92343147d4ccf7.svg",
     "static/media/stripe.svg": "/static/media/stripe.c46c2b41e905214445deddcb58c3abdb.svg",
+    "static/media/nextjs.svg": "/static/media/nextjs.1b2b52c044b9dcea988e68b966864c5a.svg",
+    "static/media/mongodb.svg": "/static/media/mongodb.1aca075d5cce0819fea7ea0902d94ce4.svg",
     "static/media/aws-logo.svg": "/static/media/aws-logo.fd1ba9e4a3db464eca4de7139f0b9711.svg",
     "static/media/logo-javascript.svg": "/static/media/logo-javascript.00f3e5cf8bcf4ae623b3835ca5791b15.svg",
+    "static/media/vercel.svg": "/static/media/vercel.92c172f3cac1b86bd80d0ff64dc77317.svg",
     "static/media/typescript.svg": "/static/media/typescript.a6305a733dd55243980aec55f96f70c5.svg",
     "static/media/git-icon.svg": "/static/media/git-icon.c60b7e5ae8ec2562f23fdddcab300026.svg",
+    "static/media/gitlab.svg": "/static/media/gitlab.4a31f1b0d7169fcc66bc864a62521c31.svg",
     "static/media/vscode.svg": "/static/media/vscode.b8b1e001813039750e6c05c236ab0d46.svg",
     "static/media/webpack-icon.svg": "/static/media/webpack-icon.f44900ae6538b4d778644c71e250e7c5.svg",
+    "static/media/prisma.svg": "/static/media/prisma.671d86452eaaec143f2c67bfdd392314.svg",
     "index.html": "/index.html",
+    "static/media/auth0.svg": "/static/media/auth0.8a97e86ef04e0de568e8ff39ca242734.svg",
+    "static/media/angular.svg": "/static/media/angular.28ae4f3c6c193d04113e4767a73b86bc.svg",
     "static/media/html-1.svg": "/static/media/html-1.f318c8b1d5945fa9adc827ae94849cb1.svg",
-    "main.01b2215c.css.map": "/static/css/main.01b2215c.css.map",
-    "main.64bdf33f.js.map": "/static/js/main.64bdf33f.js.map",
+    "main.fc072c75.css.map": "/static/css/main.fc072c75.css.map",
+    "main.bee54c64.js.map": "/static/js/main.bee54c64.js.map",
     "787.52439ddb.chunk.js.map": "/static/js/787.52439ddb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.01b2215c.css",
-    "static/js/main.64bdf33f.js"
+    "static/css/main.fc072c75.css",
+    "static/js/main.bee54c64.js"
   ]
 }
