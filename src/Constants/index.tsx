@@ -19,9 +19,9 @@ export const navLinks: NavLinks[] = [
 ];
 
 export const roles: string[] = [
+  'Senior Sofware Engineer',
+  'Senior React Developer',
   'Full Stack Developer',
   'Frontend Developer',
-  'Backend Developer',
-  'Javascript Developer',
-  'React Developer'
+  'Backend Developer'
 ];

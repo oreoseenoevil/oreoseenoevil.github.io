@@ -32,11 +32,15 @@
       align-items: center;
       width: 100%;
       gap: 1rem;
+      flex-wrap: wrap;
 
       &_logo {
         height: 5rem;
         width: 5rem;
         transition: all 200ms linear;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 0.5rem;
 
         &:hover {
           transform: scale(1.2);
