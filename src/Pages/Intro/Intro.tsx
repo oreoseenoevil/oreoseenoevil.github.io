@@ -70,7 +70,7 @@ export const Intro: FC = () => {
           ))}
         </div>
         <div className={styles.button_group}>
-          <LinkButton link="mailto:creators.nuke@gmail.com">Get in touch</LinkButton>
+          <LinkButton link="mailto:app.creator@jessiet.dev">Get in touch</LinkButton>
         </div>
       </div>
       <div className={styles.img_container}>
