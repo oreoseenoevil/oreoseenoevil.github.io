@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.fc072c75.css",
-    "main.js": "/static/js/main.c2687c0b.js",
+    "main.js": "/static/js/main.66470f5f.js",
     "static/js/787.52439ddb.chunk.js": "/static/js/787.52439ddb.chunk.js",
     "static/media/permission.png": "/static/media/permission.44c13d2ae244ceca8a90.png",
     "static/media/mlops.png": "/static/media/mlops.58378cbb07eeec0006da.png",
@@ -16,7 +16,7 @@
     "static/media/wallet.png": "/static/media/wallet.932917ce5e487bda5bf0.png",
     "static/media/daily-earn.png": "/static/media/daily-earn.ec22bf96afc00415012f.png",
     "static/media/004.png": "/static/media/004.ade59d2e354b34ff7593.png",
-    "static/media/resume.pdf": "/static/media/resume.72e7fb45287291422730.pdf",
+    "static/media/resume.pdf": "/static/media/resume.d043af08749565f59136.pdf",
     "static/media/perm-login-low-res.png": "/static/media/perm-login-low-res.e0c9169d8fcab63131e1.png",
     "static/media/future-org.png": "/static/media/future-org.b18b2ce6eb09384cf8ed.png",
     "static/media/landasia.png": "/static/media/landasia.f26e0f0f014701f80f64.png",
@@ -61,11 +61,11 @@
     "static/media/angular.svg": "/static/media/angular.28ae4f3c6c193d04113e4767a73b86bc.svg",
     "static/media/html-1.svg": "/static/media/html-1.f318c8b1d5945fa9adc827ae94849cb1.svg",
     "main.fc072c75.css.map": "/static/css/main.fc072c75.css.map",
-    "main.c2687c0b.js.map": "/static/js/main.c2687c0b.js.map",
+    "main.66470f5f.js.map": "/static/js/main.66470f5f.js.map",
     "787.52439ddb.chunk.js.map": "/static/js/787.52439ddb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fc072c75.css",
-    "static/js/main.c2687c0b.js"
+    "static/js/main.66470f5f.js"
   ]
 }
