@@ -24,7 +24,39 @@ import wallet from 'assets/image/wallet.png';
 import walletLow from 'assets/image/wallet-low-res.png';
 import pdAdmin from 'assets/image/pd-admin.png';
 
+import s2data001 from 'assets/image/s2data/001.png';
+import s2data002 from 'assets/image/s2data/002.png';
+import s2data003 from 'assets/image/s2data/003.png';
+import s2data004 from 'assets/image/s2data/004.png';
+
 export const data = [
+  {
+    name: 'S2Data',
+    role: 'Full Stack Developer',
+    link: 'https://s2data.com/',
+    projects: [
+      {
+        name: 'S2Data',
+        src: s2data001,
+        lowRes: s2data001
+      },
+      {
+        name: 'S2Data',
+        src: s2data002,
+        lowRes: s2data002
+      },
+      {
+        name: 'S2Data',
+        src: s2data003,
+        lowRes: s2data003
+      },
+      {
+        name: 'S2Data',
+        src: s2data004,
+        lowRes: s2data004
+      }
+    ]
+  },
   {
     name: 'Pure Desire Ministries International',
     role: 'Full Stack Developer',
