@@ -46,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "@types/testing-library__jest-dom": "^5.14.9",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^8.57.1",
@@ -60,6 +61,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "gh-pages": "^6.3.0",
     "husky": "^8.0.3",
+    "identity-obj-proxy": "^3.0.0",
     "lint-staged": "^15.2.10",
     "prettier": "^2.8.8",
     "pretty-quick": "^3.1.3"
