@@ -1,0 +1,28 @@
+/* Section header — mono eyebrow (`NN / name`) + 1px hairline rule + optional
+   `// comment`. Extracted from the prototype's about header. */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 38px;
+}
+
+.header_eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--accent2);
+  letter-spacing: 0.05em;
+}
+
+.header_rule {
+  height: 1px;
+  flex: 1;
+  background: var(--line);
+}
+
+.header_comment {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink3);
+}

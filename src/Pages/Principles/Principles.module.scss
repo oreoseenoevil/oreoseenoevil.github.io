@@ -1,0 +1,48 @@
+/* Principles ("05 / principles") — four .phil-grid cards, each with a big
+   mono accent number + hairline, an 800-weight h3 and an ink2 paragraph.
+   Values translated 1:1 from prototype lines 601-631. */
+
+.section {
+  padding: 20px 0 84px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 26px 26px 28px;
+  background: var(--bg2);
+}
+
+.card_head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.card_num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.card_rule {
+  height: 1px;
+  flex: 1;
+  background: var(--line);
+}
+
+.card_title {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+}
+
+.card_body {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink2);
+  margin: 0;
+}

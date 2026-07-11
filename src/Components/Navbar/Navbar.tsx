@@ -1,112 +1,100 @@
-import { FC, useCallback, useEffect, useState } from 'react';
-import { navLinks } from 'Constants';
-
-import { FaSun, FaMoon } from 'react-icons/fa';
+import { FC, useEffect, useState } from 'react';
 import { useMode } from 'Hooks/useMode';
-import useClassNames from 'Hooks/useClassNames';
-import { useMediaQuery } from 'react-responsive';
-import { SlideToggle } from 'Components/SlideToggle';
-import { useTitle } from 'react-use';
 import styles from './Navbar.module.scss';
+
+interface NavLink {
+  name: string;
+  href: string;
+}
+
+const NAV_LINKS: NavLink[] = [
+  { name: 'Work', href: '#work' },
+  { name: 'About', href: '#about' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Contact', href: '#contact' }
+];
 
 export const Navbar: FC = () => {
   const { darkMode, setDarkMode } = useMode();
-  const [onScroll, setOnScroll] = useState(true);
-  const [isActive, setIsActive] = useState(false);
-  const [lastScroll, setLastScroll] = useState(0);
-  const [path, setPath] = useState('Portfolio');
-  const [color, setColor] = useState(false);
-  useTitle(`${path} | Jessie Tarrosa`);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const burger = useMediaQuery({ query: '(max-width: 800px)' });
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 36);
 
-  const handleScroll = useCallback(() => {
-    if (typeof window !== 'undefined') {
-      setLastScroll(window.scrollY || document.documentElement.scrollTop);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
 
-      if (window.scrollY > lastScroll) {
-        if (lastScroll > 80) {
-          setColor(true);
-        } else {
-          setColor(false);
-        }
-        setOnScroll(false);
-      } else {
-        setOnScroll(true);
-      }
-    }
-  }, [lastScroll]);
-
-  const handleToggle = (value: boolean) => {
-    setDarkMode(value);
-    setIsActive(false);
-  };
-
-  const handleClick = useCallback((path: string) => {
-    let newPath = path;
-    if (newPath === '' || newPath === 'Home') {
-      newPath = 'Portfolio';
-    }
-
-    setPath(newPath);
-    setIsActive(false);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [handleScroll]);
-
-  useEffect(() => {
-    let active = true;
-
-    if (!burger) {
-      if (active) {
-        setIsActive(false);
-      }
-    }
-
-    return () => {
-      active = false;
-    };
-  }, [burger]);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav className={useClassNames(styles.navbar, !onScroll && styles.navbar_hidden, color && styles.navbar_color)}>
-      <header className={styles.header}>
-        <div className={styles.logo}>
-          <a href="#intro" className={styles.logo_link} onClick={() => handleClick('Portfolio')}>
-            JT.
-          </a>
-        </div>
-        {burger && (
-          <button
-            className={`${styles.burger} ${isActive && styles.active}`}
-            onClick={() => setIsActive(!isActive)}
-            type="button"
-          >
-            <span className={styles.bar1} />
-            <span className={styles.bar2} />
-          </button>
-        )}
-        <ul className={useClassNames(styles.menu)} style={{ right: burger && isActive ? 0 : '-100%' }}>
-          {navLinks.map((item, i) => (
-            <li key={i} className={styles.menu_item}>
-              <a href={item.path} className={styles.link} onClick={() => handleClick(item.name)}>
-                {item.name}
-              </a>
-            </li>
+    <nav className={scrolled ? `${styles.nav} ${styles.nav_scrolled}` : styles.nav}>
+      <div className={`wrap ${styles.bar}`}>
+        <a href="#top" className={styles.logo}>
+          <span className={styles.logo_mark} aria-hidden="true" />
+          jessiet<span className={styles.logo_dev}>.dev</span>
+        </a>
+        <div className={`nav-links ${styles.links}`}>
+          {NAV_LINKS.map((link) => (
+            <a key={link.href} href={link.href}>
+              {link.name}
+            </a>
           ))}
-          <li className={styles.menu_item}>
-            <SlideToggle value={darkMode} onChange={handleToggle}>
-              {darkMode ? <FaSun className={styles.switch_mode} /> : <FaMoon className={styles.switch_mode} />}
-            </SlideToggle>
-          </li>
-        </ul>
-      </header>
+        </div>
+        <div className={styles.right}>
+          <span className={`nav-status ${styles.status}`}>
+            <span className={`${styles.status_dot} jt-nav-pulse`} aria-hidden="true" />
+            currently building Atrium OS
+          </span>
+          <button
+            type="button"
+            aria-label="Toggle dark mode"
+            className={styles.mode_btn}
+            onClick={() => setDarkMode((prev) => !prev)}
+          >
+            {darkMode ? '☀' : '☾'}
+          </button>
+          <a className={`nav-cta ${styles.cta}`} href="#contact">
+            Let&rsquo;s talk
+          </a>
+          <button
+            type="button"
+            aria-label="Menu"
+            className={`m-menu-btn ${styles.menu_btn}`}
+            onClick={() => setMenuOpen((prev) => !prev)}
+          >
+            &#9776;
+          </button>
+        </div>
+      </div>
+      {menuOpen && (
+        <div className={`wrap ${styles.menu_wrap}`}>
+          <div className={styles.menu_panel}>
+            {NAV_LINKS.map((link) =>
+              link.href === '#contact' ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`${styles.menu_link} ${styles.menu_link_accent}`}
+                  onClick={closeMenu}
+                >
+                  Contact &rarr;
+                </a>
+              ) : (
+                <a key={link.href} href={link.href} className={styles.menu_link} onClick={closeMenu}>
+                  {link.name}
+                </a>
+              )
+            )}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

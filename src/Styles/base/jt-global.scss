@@ -1,0 +1,493 @@
+/* ============================================================
+   jt-global.scss — global (non-module) styles for the
+   "Terminal Deluxe × Editorial Ledger" redesign (PURPLE accent).
+   Translated from the prototype's shared <style> block.
+   Imported LAST from main.scss so it wins the cascade.
+   ============================================================ */
+
+/* ---------- Design tokens ---------- */
+:root {
+  --bg: #f6f4ef;
+  --bg2: #fcfbf8;
+  --bg3: #f1ede4;
+  --ink: #1b1815;
+  --ink2: #6b655d;
+  --ink3: #9c948a;
+  --line: rgba(27, 24, 21, 0.12);
+  --line2: rgba(27, 24, 21, 0.22);
+  --chip: #f1ede4;
+  --winbar: #ebe7de;
+  --grid: rgba(27, 24, 21, 0.05);
+  --nav-bg: rgba(246, 244, 239, 0.82);
+  --accent: #7c3aed;
+  --accent2: #6d28d9;
+  --accent-soft: rgba(124, 58, 237, 0.12);
+  --ok: #1f8a5b;
+}
+
+.jt-dark {
+  --bg: #141210;
+  --bg2: #1d1a17;
+  --bg3: #24201b;
+  --ink: #f4f1ea;
+  --ink2: #a79f94;
+  --ink3: #7c756b;
+  --line: rgba(244, 241, 234, 0.14);
+  --line2: rgba(244, 241, 234, 0.26);
+  --chip: #26221d;
+  --winbar: #221e19;
+  --grid: rgba(244, 241, 234, 0.06);
+  --nav-bg: rgba(20, 18, 16, 0.82);
+  --accent: #a78bfa;
+  --accent2: #c4b5fd;
+  --accent-soft: rgba(167, 139, 250, 0.16);
+  --ok: #5ab877;
+}
+
+/* ---------- Base element rules (scoped resets) ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #e9e6df;
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--ink3);
+  opacity: 1;
+}
+
+body ::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* ---------- Layout container + grids ---------- */
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 52px;
+  align-items: start;
+}
+
+.proj-flag {
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+}
+
+.proj-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.phil-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.exp-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 28px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.foot-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.2fr;
+  gap: 32px;
+}
+
+.form-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* ---------- Nav responsive helpers ---------- */
+.m-menu-btn {
+  display: none;
+}
+
+/* ---------- ≤920px collapse ---------- */
+@media (max-width: 920px) {
+  .wrap {
+    padding: 0 24px;
+  }
+
+  .hero-grid,
+  .two-col,
+  .proj-flag,
+  .proj-grid,
+  .skill-grid,
+  .phil-grid,
+  .contact-grid,
+  .foot-grid,
+  .form-2,
+  .exp-row {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-row {
+    gap: 8px;
+  }
+
+  .nav-links,
+  .nav-status,
+  .nav-cta {
+    display: none !important;
+  }
+
+  .m-menu-btn {
+    display: inline-flex !important;
+  }
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes jtreveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes jtcaret {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes jtspin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes jtfloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes jtmarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes jtpulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--accent-soft);
+  }
+
+  50% {
+    box-shadow: 0 0 0 5px transparent;
+  }
+}
+
+@keyframes jtzz {
+  0% {
+    opacity: 0;
+    transform: translateY(5px) scale(0.8);
+  }
+
+  30% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-9px) scale(1.05);
+  }
+}
+
+@keyframes jtbreath {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(1.06);
+  }
+}
+
+@keyframes jtwave {
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes jtwalk {
+  0% {
+    transform: translateX(-90px);
+  }
+
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes jtbob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes jtstepA {
+  0%,
+  100% {
+    transform: rotate(20deg);
+  }
+
+  50% {
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes jtstepB {
+  0%,
+  100% {
+    transform: rotate(-20deg);
+  }
+
+  50% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes jttail {
+  0%,
+  100% {
+    transform: rotate(30deg);
+  }
+
+  50% {
+    transform: rotate(46deg);
+  }
+}
+
+@keyframes jtwiggle {
+  0%,
+  100% {
+    transform: rotate(-2.6deg);
+  }
+
+  50% {
+    transform: rotate(2.6deg);
+  }
+}
+
+@keyframes jttail2 {
+  0%,
+  100% {
+    transform: rotate(-17deg);
+  }
+
+  50% {
+    transform: rotate(17deg);
+  }
+}
+
+@keyframes jtpawA {
+  0%,
+  100% {
+    transform: translateX(-2px);
+  }
+
+  50% {
+    transform: translateX(3px);
+  }
+}
+
+@keyframes jtpawB {
+  0%,
+  100% {
+    transform: translateX(3px);
+  }
+
+  50% {
+    transform: translateX(-2px);
+  }
+}
+
+/* ---------- Hero "Loaf" cat state classes ---------- */
+.hero-cat .hc-body {
+  animation: jtbreath 3.6s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.hero-cat .hc-earL,
+.hero-cat .hc-earR {
+  transition: transform 0.4s cubic-bezier(0.34, 1.5, 0.5, 1);
+  transform-origin: bottom center;
+}
+
+.hero-cat .hc-earL {
+  transform: rotate(-20deg);
+}
+
+.hero-cat .hc-earR {
+  transform: rotate(18deg);
+}
+
+.hero-cat.awake .hc-earL {
+  transform: rotate(-7deg);
+}
+
+.hero-cat.awake .hc-earR {
+  transform: rotate(7deg);
+}
+
+.hero-cat .hc-eye {
+  transition: opacity 0.25s ease;
+  opacity: 1;
+}
+
+.hero-cat.awake .hc-eye {
+  opacity: 0;
+}
+
+.hero-cat .hc-eyeo {
+  transition: opacity 0.25s ease;
+  opacity: 0;
+}
+
+.hero-cat.awake .hc-eyeo {
+  opacity: 1;
+}
+
+.hero-cat .hc-tail {
+  transform-origin: bottom center;
+  transition: transform 0.5s cubic-bezier(0.34, 1.3, 0.5, 1);
+  transform: rotate(0deg);
+}
+
+.hero-cat.awake .hc-tail {
+  transform: rotate(-22deg);
+}
+
+.hero-cat .hc-tailwave {
+  transform-origin: bottom center;
+  animation: jtwave 3s ease-in-out infinite;
+}
+
+.hero-cat .hc-z {
+  transition: opacity 0.3s ease;
+}
+
+.hero-cat.awake .hc-z {
+  opacity: 0;
+}
+
+/* ---------- Scroll reveal base ---------- */
+[data-reveal] {
+  opacity: 0;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

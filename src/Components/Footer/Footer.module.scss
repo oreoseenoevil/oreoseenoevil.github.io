@@ -1,33 +1,92 @@
+/* Footer — translated from the prototype's footer block (lines 744–777).
+   Grid layout comes from the global `.foot-grid`; container from `.wrap`. */
+
 .footer {
-  width: 100%;
-  display: flex;
+  border-top: 1px solid var(--line);
+  background: var(--bg2);
+  margin-top: 20px;
+}
+
+/* The prototype sets this padding inline on the `.wrap` div, so it wins over
+   `.wrap`'s responsive padding at every width. Double the class so the module
+   rule keeps that precedence regardless of bundle order. */
+.footer_inner.footer_inner {
+  padding: 56px 40px 30px;
+}
+
+.footer_logo {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 9px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 14px;
+}
 
-  &_container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
+.footer_logo_square {
+  width: 11px;
+  height: 11px;
+  background: var(--accent);
+  border-radius: 2px;
+  display: inline-block;
+  transform: rotate(45deg);
+}
 
-    padding: 5rem 6rem;
+.footer_logo_dev {
+  color: var(--accent);
+}
 
-    @media (max-width: 800px) {
-      padding: 5rem;
-    }
+.footer_blurb {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink2);
+  max-width: 34ch;
+  margin: 0 0 16px;
+}
 
-    @media (max-width: 600px) {
-      padding: 5rem 3rem;
-    }
+.footer_quip {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink3);
+}
 
-    @media (max-width: 500px) {
-      padding: 5rem 2rem;
-    }
-  }
+.footer_heading {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--ink3);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
 
-  &_span {
-    font-size: clamp(1.25rem, 2vw, 2rem);
-    font-weight: 300;
-  }
+.footer_links {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 14px;
+}
+
+.footer_links_mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.footer_bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11.5px;
+  color: var(--ink3);
+}
+
+.footer_bottom_links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
 }

@@ -1,0 +1,111 @@
+/* Experience timeline — `.exp-row` rows (label col + content col) with 1px top
+   borders, mono metadata, accent "current" pills. Translated from the
+   prototype's experience section (proto lines 417–514). The `.exp-row` grid
+   itself is a global class from jt-global.scss. */
+
+.experience {
+  padding: 20px 0 84px;
+}
+
+.row {
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+
+  &:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+.row_period {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink2);
+}
+
+.row_company {
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  margin-top: 4px;
+}
+
+.row_current {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--accent2);
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  padding: 3px 8px;
+}
+
+.row_current_dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: jtpulse 2s infinite;
+}
+
+.row_meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink3);
+  margin-top: 6px;
+}
+
+.row_title {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.row_desc {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink2);
+  margin: 0 0 12px;
+  max-width: 60ch;
+}
+
+.row_strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.row_bullets {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  line-height: 1.9;
+  color: var(--ink2);
+  margin-bottom: 12px;
+}
+
+.row_bullets_accent {
+  color: var(--accent);
+}
+
+.row_tech {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink3);
+}
+
+/* Local copy of the global `jtpulse` keyframes: CSS modules localizes every
+   animation name used in a module file (verified against this repo's
+   css-loader pipeline), so a module rule cannot reference the global keyframes
+   directly. The local definition is hashed — it does not redefine the global —
+   and matches jt-global.scss exactly. Same pattern as CatCompanion.module.scss. */
+@keyframes jtpulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--accent-soft);
+  }
+
+  50% {
+    box-shadow: 0 0 0 5px transparent;
+  }
+}

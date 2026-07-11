@@ -1,42 +1,38 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 import { Navbar } from 'Components/Navbar';
-import { Projects } from 'Pages/Projects';
-import { AboutMe } from 'Pages/AboutMe';
-import { Intro } from 'Pages/Intro';
-// import { ParticlesBG } from 'Components/ParticlesBG';
-
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
-import { useMode } from 'Hooks/useMode';
-import useClassNames from 'Hooks/useClassNames';
 import { Footer } from 'Components/Footer';
+import { NotFoundOverlay } from 'Components/NotFoundOverlay';
+import { CatCompanion } from 'Components/CatCompanion';
+import { Hero } from 'Pages/Hero';
+import { AboutMe } from 'Pages/AboutMe';
+import { Work } from 'Pages/Work';
+import { Experience } from 'Pages/Experience';
+import { Skills } from 'Pages/Skills';
+import { Principles } from 'Pages/Principles';
+import { OffTheClock } from 'Pages/OffTheClock';
+import { Contact } from 'Pages/Contact';
+import { useReveal } from 'Hooks/useReveal';
 import styles from './App.module.scss';
 
 export const App = () => {
-  const { darkModeClass, darkMode } = useMode();
+  const [show404, setShow404] = useState(false);
 
-  useEffect(() => {
-    let active = true;
-    if (active) {
-      AOS.init();
-    }
-
-    return () => {
-      active = false;
-    };
-  }, []);
+  useReveal();
 
   return (
-    <div className={useClassNames(styles.App, darkModeClass, darkMode ? styles.dark_mode : styles.light_mode)}>
+    <div id="top" className={styles.app}>
       <Navbar />
-      <div className={styles.App_container}>
-        <Intro />
-        <AboutMe />
-        <Projects />
-      </div>
-      <Footer />
-      {/* <ParticlesBG /> */}
+      <Hero />
+      <AboutMe />
+      <Work />
+      <Experience />
+      <Skills />
+      <Principles />
+      <OffTheClock />
+      <Contact />
+      <Footer onOpen404={() => setShow404(true)} />
+      <NotFoundOverlay open={show404} onClose={() => setShow404(false)} />
+      <CatCompanion />
     </div>
   );
 };
