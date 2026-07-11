@@ -7,10 +7,31 @@
    node, cancels the rAF loop, removes listeners and disconnects observers. */
 import styles from './CatCompanion.module.scss';
 
-const IDLE_ACTS = ['sit', 'sit', 'groom', 'sleep'];
+// [state, minMs, maxMs] — weights come from duplicates; each act keeps a
+// duration range that fits the behavior (naps are long, rolls are quick)
+const IDLE_ACTS: [string, number, number][] = [
+  ['sit', 1500, 3500],
+  ['sit', 1500, 3500],
+  ['sit', 1500, 3500],
+  ['groom', 2000, 4200],
+  ['groom', 2000, 4200],
+  ['sleep', 3200, 7200],
+  ['sleep', 3200, 7200],
+  ['scratch', 1800, 3200],
+  ['scratch', 1800, 3200],
+  ['stretch', 1800, 2800],
+  ['stretch', 1800, 2800],
+  ['roll', 1400, 2200]
+];
 const NEAR = 210;
 const FAR = 340;
 const STOP = 34;
+// speeds in px per 60fps-frame (dt-normalized below, so real monitors of any
+// refresh rate move the cat identically); caps keep it a trot, not a teleport
+const CHASE_EASE = 0.055;
+const CHASE_MAX = 4.2;
+const WANDER_EASE = 0.022;
+const WANDER_MAX = 1.8;
 
 const buildCatMarkup = () =>
   [
@@ -19,8 +40,8 @@ const buildCatMarkup = () =>
     `<div class="${styles.p} ${styles.b}" style="left:16px;top:0"></div>`,
     `<div class="${styles.p}" style="left:16px;bottom:0"></div>`,
     `<div class="${styles.body}"></div>`,
-    `<div class="${styles.p}" style="left:38px;top:1px"></div>`,
-    `<div class="${styles.p} ${styles.b}" style="left:38px;bottom:1px"></div>`,
+    `<div class="${styles.p} ${styles.pf}" style="left:38px;top:1px"></div>`,
+    `<div class="${styles.p} ${styles.b} ${styles.pf}" style="left:38px;bottom:1px"></div>`,
     `<div class="${styles.head}"></div>`,
     '<div style="position:absolute;right:4px;top:1px;width:0;height:0;border-left:3px solid transparent;border-right:3px solid transparent;border-bottom:6px solid var(--ink);transform:rotate(22deg)"></div>',
     '<div style="position:absolute;right:4px;bottom:1px;width:0;height:0;border-left:3px solid transparent;border-right:3px solid transparent;border-top:6px solid var(--ink);transform:rotate(-22deg)"></div>',
@@ -87,10 +108,11 @@ export const initCatCompanion = (): (() => void) => {
       el.className = `${styles.jtc} ${styles[s]}`;
     }
   };
-  const idleFor = (now: number, dur: number) => {
+  const idleFor = (now: number, act?: [string, number, number]) => {
     mode = 'idle';
-    setVis(IDLE_ACTS[Math.floor(Math.random() * IDLE_ACTS.length)]);
-    stateUntil = now + dur;
+    const [name, minMs, maxMs] = act ?? IDLE_ACTS[Math.floor(Math.random() * IDLE_ACTS.length)];
+    setVis(name);
+    stateUntil = now + minMs + Math.random() * (maxMs - minMs);
   };
   const pickWander = () => {
     mode = 'wander';
@@ -109,10 +131,14 @@ export const initCatCompanion = (): (() => void) => {
   window.addEventListener('mousemove', onMouseMove, { passive: true });
   window.addEventListener('resize', onResize, { passive: true });
 
-  idleFor(performance.now(), 1200);
+  idleFor(performance.now(), ['sit', 900, 1500]);
 
+  let lastT = performance.now();
   const loop = () => {
     const now = performance.now();
+    // 60fps-normalized time step, clamped so a backgrounded tab can't teleport the cat
+    const dt = Math.min(3, (now - lastT) / 16.667);
+    lastT = now;
 
     // mood swings: ~35% of the time the cat ignores the cursor entirely
     if (now > nextMood) {
@@ -130,18 +156,26 @@ export const initCatCompanion = (): (() => void) => {
       mode = 'chase';
       if (cdist > STOP + 6) {
         const f = (cdist - STOP) / cdist;
-        x += dcx * f * 0.14;
-        y += dcy * f * 0.14;
+        let stepX = dcx * f * CHASE_EASE * dt;
+        let stepY = dcy * f * CHASE_EASE * dt;
+        const step = Math.hypot(stepX, stepY);
+        const maxStep = CHASE_MAX * dt;
+        if (step > maxStep) {
+          stepX *= maxStep / step;
+          stepY *= maxStep / step;
+        }
+        x += stepX;
+        y += stepY;
         aimAngle = (Math.atan2(dcy, dcx) * 180) / Math.PI;
         setVis('follow');
       } else {
         setVis('sit'); // caught up to the cursor — sit and stare
       }
     } else if (mode === 'chase') {
-      idleFor(now, 600 + Math.random() * 700); // just lost interest
+      idleFor(now, ['sit', 600, 1300]); // just lost interest — brief settle
     } else if (mode === 'idle') {
       if (now > stateUntil) {
-        if (Math.random() < 0.3) idleFor(now, 1600 + Math.random() * 2600);
+        if (Math.random() < 0.3) idleFor(now);
         else pickWander();
       }
     } else {
@@ -150,10 +184,18 @@ export const initCatCompanion = (): (() => void) => {
       const dty = tgy - y;
       const d = Math.hypot(dtx, dty);
       if (d < 8) {
-        idleFor(now, 1500 + Math.random() * 3400);
+        idleFor(now);
       } else {
-        x += dtx * 0.05;
-        y += dty * 0.05;
+        let stepX = dtx * WANDER_EASE * dt;
+        let stepY = dty * WANDER_EASE * dt;
+        const step = Math.hypot(stepX, stepY);
+        const maxStep = WANDER_MAX * dt;
+        if (step > maxStep) {
+          stepX *= maxStep / step;
+          stepY *= maxStep / step;
+        }
+        x += stepX;
+        y += stepY;
         aimAngle = (Math.atan2(dty, dtx) * 180) / Math.PI;
         setVis('follow');
       }
@@ -161,7 +203,7 @@ export const initCatCompanion = (): (() => void) => {
 
     // rotate smoothly toward heading (shortest path)
     const da = ((aimAngle - curAngle + 540) % 360) - 180;
-    curAngle += da * 0.16;
+    curAngle += da * Math.min(1, 0.16 * dt);
     el.style.transform = `translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,0) rotate(${curAngle.toFixed(1)}deg)`;
 
     rafId = window.requestAnimationFrame(loop);

@@ -108,12 +108,72 @@
   }
 }
 
+.pf {
+  /* marker for the front paw pair (nearest the head) — used by .scratch */
+  z-index: 1;
+}
+
 .sit .p,
 .groom .p,
-.sleep .p {
+.sleep .p,
+.stretch .p,
+.scratch .p {
   animation: none;
   opacity: 0.3;
   transform: scale(0.5);
+}
+
+.roll .p {
+  animation: none;
+  opacity: 0;
+}
+
+/* scratching the floor: front paws jab forward alternately, body rocks */
+.scratch {
+  .p.pf {
+    opacity: 1;
+    transform: none;
+    animation: jtc-scratch 0.32s ease-in-out infinite;
+
+    &.b {
+      animation-delay: -0.16s;
+    }
+  }
+
+  .body {
+    animation: jtc-rock 0.64s ease-in-out infinite;
+  }
+
+  .tail {
+    animation-duration: 2s;
+  }
+}
+
+/* the long stretch: whole silhouette elongates, tail straightens */
+.stretch {
+  .jtcIn {
+    animation: jtc-stretch 2.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+
+  .tail {
+    animation: none;
+    transform: rotate(4deg);
+  }
+}
+
+/* rolling: belly-up wriggle (squash + tilt from the top-down view), happy tail */
+.roll {
+  .jtcIn {
+    animation: jtc-roll 1.7s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  }
+
+  .tail {
+    animation-duration: 0.8s;
+
+    .tail2 {
+      animation-duration: 0.4s;
+    }
+  }
 }
 
 .groom .tail {
@@ -215,5 +275,54 @@
   100% {
     opacity: 0;
     transform: translateY(-12px) scale(1.1);
+  }
+}
+
+@keyframes jtc-scratch {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes jtc-rock {
+  0%,
+  100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(1.5deg);
+  }
+}
+
+/* .jtcIn carries translate(-50%,-50%) for centering, so every keyframe must
+   restate it or the cat jumps by half its own size */
+@keyframes jtc-stretch {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scaleX(1);
+  }
+  45%,
+  62% {
+    transform: translate(-50%, -50%) scaleX(1.28);
+  }
+}
+
+@keyframes jtc-roll {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg) scaleY(1);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(-7deg) scaleY(0.62);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(3deg) scaleY(1.18);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(7deg) scaleY(0.66);
   }
 }
