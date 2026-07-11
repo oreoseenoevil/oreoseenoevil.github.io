@@ -29,7 +29,12 @@ export const Contact: FC = () => {
       return;
     }
 
-    const accessKey = process.env.REACT_APP_WEB3FORMS_ACCESS_KEY;
+    // Secrets sometimes get pasted as NAME=value or wrapped in quotes; Web3Forms requires the bare UUID.
+    const accessKey = (process.env.REACT_APP_WEB3FORMS_ACCESS_KEY ?? '')
+      .trim()
+      .replace(/^\w+=/, '')
+      .replace(/^["']|["']$/g, '')
+      .trim();
     if (!accessKey) {
       setErr('Form backend not configured — email app.creator@jessiet.dev instead.');
       return;
