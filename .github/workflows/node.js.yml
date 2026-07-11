@@ -25,6 +25,8 @@ jobs:
           cache: 'pnpm' # Cache pnpm store
       - run: pnpm install --frozen-lockfile
       - run: pnpm run build
+        env:
+          REACT_APP_WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
       - run: pnpm test
       - name: Deploy with gh-pages
         run: |

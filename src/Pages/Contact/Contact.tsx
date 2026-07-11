@@ -5,12 +5,14 @@ import resume from 'assets/file/resume.pdf';
 import styles from './Contact.module.scss';
 
 const EMAIL_REGEX = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
 export const Contact: FC = () => {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
   const [err, setErr] = useState('');
 
-  const submitForm = (e: FormEvent<HTMLFormElement>) => {
+  const submitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const field = (key: string) => String(data.get(key) ?? '').trim();
@@ -26,8 +28,42 @@ export const Contact: FC = () => {
       setErr('That email looks off — mind checking it?');
       return;
     }
+
+    const accessKey = process.env.REACT_APP_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      setErr('Form backend not configured — email app.creator@jessiet.dev instead.');
+      return;
+    }
+
     setErr('');
-    setSent(true);
+    setSending(true);
+    try {
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `New message from jessiet.dev — ${name}`,
+          from_name: 'jessiet.dev contact form',
+          name,
+          email,
+          company: field('company'),
+          details,
+          type: field('type'),
+          botcheck: Boolean(data.get('botcheck'))
+        })
+      });
+      const body = await res.json();
+      if (res.ok && body.success) {
+        setSent(true);
+      } else {
+        setErr('Signal lost — try again, or email me directly.');
+      }
+    } catch {
+      setErr('Signal lost — try again, or email me directly.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -113,6 +149,13 @@ export const Contact: FC = () => {
                 </div>
               ) : (
                 <form className={styles.form} onSubmit={submitForm}>
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    className={styles.form_botcheck}
+                    tabIndex={-1}
+                    aria-hidden="true"
+                  />
                   <div className={`form-2 ${styles.form_row}`}>
                     <label className={styles.form_field} htmlFor="contact-name">
                       <span className={styles.form_label}>NAME *</span>
@@ -169,8 +212,8 @@ export const Contact: FC = () => {
                       {err}
                     </div>
                   )}
-                  <button type="submit" className={styles.form_submit}>
-                    Send the signal &rarr;
+                  <button type="submit" className={styles.form_submit} disabled={sending}>
+                    {sending ? <>Sending&hellip;</> : <>Send the signal &rarr;</>}
                   </button>
                 </form>
               )}
