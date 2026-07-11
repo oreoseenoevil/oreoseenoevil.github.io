@@ -363,3 +363,40 @@
 .marquee_gem {
   color: var(--accent);
 }
+
+/* Local copies of jt-global keyframes: css-modules hashes animation names
+   referenced from module files, so global keyframes can't be used here
+   (same precedent as Experience.module.scss / Navbar's :global block). */
+@keyframes jtcaret {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes jtzz {
+  0% {
+    opacity: 0;
+    transform: translateY(5px) scale(0.8);
+  }
+  30% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-9px) scale(1.05);
+  }
+}
+
+@keyframes jtmarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
