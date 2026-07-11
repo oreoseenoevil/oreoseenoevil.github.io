@@ -191,3 +191,12 @@
 .success_exit_ok {
   color: var(--ok);
 }
+
+.form_botcheck {
+  display: none;
+}
+
+.form_submit:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
