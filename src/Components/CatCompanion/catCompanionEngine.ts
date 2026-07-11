@@ -32,6 +32,9 @@ const CHASE_EASE = 0.055;
 const CHASE_MAX = 4.2;
 const WANDER_EASE = 0.022;
 const WANDER_MAX = 1.8;
+const MAX_FX = 36; // hard cap on live effect nodes (paw prints, dust, hearts)
+const PAW_EVERY_PX = 26;
+const HEART_COOLDOWN_MS = 4500;
 
 const buildCatMarkup = () =>
   [
@@ -71,11 +74,38 @@ export const initCatCompanion = (): (() => void) => {
   el.innerHTML = buildCatMarkup();
   document.body.appendChild(el);
 
+  // world-fixed effects layer (paw prints etc. stay where they happened
+  // while the cat walks on); sits just under the cat's z-index
+  const fx = document.createElement('div');
+  fx.className = styles.fx;
+  fx.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(fx);
+
+  const spawnFx = (cls: string, px: number, py: number, rot: number, inner?: string) => {
+    if (fx.childElementCount >= MAX_FX && fx.firstChild) fx.removeChild(fx.firstChild);
+    const d = document.createElement('div');
+    d.className = cls;
+    d.style.transform = `translate3d(${px.toFixed(1)}px,${py.toFixed(1)}px,0) rotate(${rot.toFixed(1)}deg)`;
+    if (inner) d.innerHTML = inner;
+    // animationend bubbles up from inner nodes too, so one listener covers both shapes
+    d.addEventListener(
+      'animationend',
+      () => {
+        if (d.parentNode) d.parentNode.removeChild(d);
+      },
+      { once: true }
+    );
+    fx.appendChild(d);
+  };
+
   // keep the silhouette in sync with the theme (--ink flips black<->cream);
   // the theme class 'jt-dark' lives on <html> (documentElement)
   const syncInk = () => {
     const ink = window.getComputedStyle(document.documentElement).getPropertyValue('--ink');
-    if (ink) el.style.setProperty('--ink', ink.trim());
+    if (ink) {
+      el.style.setProperty('--ink', ink.trim());
+      fx.style.setProperty('--ink', ink.trim());
+    }
   };
   syncInk();
   let observer: MutationObserver | null = null;
@@ -101,6 +131,22 @@ export const initCatCompanion = (): (() => void) => {
   let attentive = true; // cats sometimes stop caring about you
   let nextMood = 0;
   let rafId = 0;
+  let travel = 0; // distance since the last paw print
+  let pawSide = 1; // gait alternates prints left/right of the path
+  let wasCaught = false; // edge-detects "just reached the cursor"
+  let heartOkAt = 0;
+  let nextDust = 0;
+
+  const dropPawPrint = (stepLen: number) => {
+    travel += stepLen;
+    if (travel < PAW_EVERY_PX) return;
+    travel = 0;
+    pawSide *= -1;
+    const a = (curAngle * Math.PI) / 180;
+    const px = x - Math.cos(a) * 8 - Math.sin(a) * 5 * pawSide;
+    const py = y - Math.sin(a) * 8 + Math.cos(a) * 5 * pawSide;
+    spawnFx(styles.paw, px, py, curAngle + 90);
+  };
 
   const setVis = (s: string) => {
     if (s !== state) {
@@ -168,8 +214,17 @@ export const initCatCompanion = (): (() => void) => {
         y += stepY;
         aimAngle = (Math.atan2(dcy, dcx) * 180) / Math.PI;
         setVis('follow');
+        dropPawPrint(Math.hypot(stepX, stepY));
+        wasCaught = false;
       } else {
         setVis('sit'); // caught up to the cursor — sit and stare
+        if (!wasCaught) {
+          wasCaught = true;
+          if (now > heartOkAt) {
+            heartOkAt = now + HEART_COOLDOWN_MS;
+            spawnFx(styles.heart, x, y - 16, 0, '<i>♥</i>');
+          }
+        }
       }
     } else if (mode === 'chase') {
       idleFor(now, ['sit', 600, 1300]); // just lost interest — brief settle
@@ -198,7 +253,19 @@ export const initCatCompanion = (): (() => void) => {
         y += stepY;
         aimAngle = (Math.atan2(dty, dtx) * 180) / Math.PI;
         setVis('follow');
+        dropPawPrint(Math.hypot(stepX, stepY));
+        wasCaught = false;
       }
+    }
+
+    // scratching kicks little flecks back from the front paws
+    if (state === 'scratch' && now > nextDust) {
+      nextDust = now + 260 + Math.random() * 160;
+      const a = (curAngle * Math.PI) / 180;
+      const side = Math.random() > 0.5 ? 1 : -1;
+      const ox = x + Math.cos(a) * 14 - Math.sin(a) * 6 * side;
+      const oy = y + Math.sin(a) * 14 + Math.cos(a) * 6 * side;
+      spawnFx(styles.dust, ox, oy, curAngle + 180 + (Math.random() * 50 - 25), '<i></i>');
     }
 
     // rotate smoothly toward heading (shortest path)
@@ -217,5 +284,6 @@ export const initCatCompanion = (): (() => void) => {
     window.removeEventListener('resize', onResize);
     if (observer) observer.disconnect();
     if (el.parentNode) el.parentNode.removeChild(el);
+    if (fx.parentNode) fx.parentNode.removeChild(fx);
   };
 };
