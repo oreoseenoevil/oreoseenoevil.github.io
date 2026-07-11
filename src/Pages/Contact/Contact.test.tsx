@@ -124,6 +124,19 @@ it('submits to Web3Forms and swaps to the success panel', async () => {
   });
 });
 
+it('sanitizes a NAME=value formatted access key before sending', async () => {
+  process.env.REACT_APP_WEB3FORMS_ACCESS_KEY = 'REACT_APP_WEB3FORMS_ACCESS_KEY="11111111-2222-3333-4444-555555555555"';
+  const user = userEvent.setup();
+  render(<Contact />);
+
+  await fillForm(user, { name: 'Jane Doe', email: 'jane@company.com', details: 'A complicated billing system.' });
+  await submit(user);
+
+  expect(await screen.findByText('Signal received.')).toBeInTheDocument();
+  const payload = JSON.parse(mockFetch.mock.calls[0][1].body);
+  expect(payload.access_key).toBe('11111111-2222-3333-4444-555555555555');
+});
+
 it('shows the failure message when Web3Forms rejects the submission', async () => {
   mockFetch.mockResolvedValue({ ok: false, json: async () => ({ success: false, message: 'Invalid access key' }) });
   const user = userEvent.setup();
