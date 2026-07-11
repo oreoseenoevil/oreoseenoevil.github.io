@@ -1,5 +1,4 @@
 import { createContext, FC, useEffect, useMemo, useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 
 interface ModeContextProps {
   darkMode: boolean;
@@ -11,6 +10,15 @@ interface ModeContextProviderProps {
   children: React.ReactNode;
 }
 
+const getInitialDarkMode = () => {
+  try {
+    return localStorage.getItem('jt-dark') === '1';
+  } catch (e) {
+    // localStorage unavailable (private mode / SSR) — default to light
+    return false;
+  }
+};
+
 export const ModeContext = createContext<ModeContextProps>({
   darkMode: false,
   setDarkMode: () => {},
@@ -18,31 +26,20 @@ export const ModeContext = createContext<ModeContextProps>({
 });
 
 export const ModeContextProvider: FC<ModeContextProviderProps> = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(getInitialDarkMode);
 
   const darkModeClass = useMemo(() => {
     return darkMode ? 'dark_mode' : 'light_mode';
   }, [darkMode]);
 
-  const isDarkPreferred = useMediaQuery({
-    query: '(prefers-color-scheme: dark)'
-  });
-
   useEffect(() => {
-    let isActive = true;
-
-    if (isDarkPreferred) {
-      if (isActive) {
-        setDarkMode(isDarkPreferred);
-      }
-    } else {
-      setDarkMode(false);
+    try {
+      localStorage.setItem('jt-dark', darkMode ? '1' : '0');
+    } catch (e) {
+      // localStorage unavailable — theme just won't persist
     }
-
-    return () => {
-      isActive = false;
-    };
-  }, [isDarkPreferred]);
+    document.documentElement.classList.toggle('jt-dark', darkMode);
+  }, [darkMode]);
 
   const value = useMemo(() => {
     return {

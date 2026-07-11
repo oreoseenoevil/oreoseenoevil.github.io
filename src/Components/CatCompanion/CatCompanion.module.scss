@@ -1,0 +1,207 @@
+/* Wandering companion cat — a tiny top-down silhouette that follows the cursor
+   and, when you stop moving, sits / grooms / dozes. Uses the page's --ink token,
+   so it is black in light mode and cream in dark mode.
+   Values ported 1:1 from the handoff's cat-companion.js self-injected styles. */
+
+.jtc {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 45;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.jtcIn {
+  position: relative;
+  width: 52px;
+  height: 22px;
+  transform: translate(-50%, -50%);
+}
+
+.p {
+  position: absolute;
+  background: var(--ink);
+  border-radius: 50%;
+  width: 4px;
+  height: 6px;
+  opacity: 1;
+  animation: jtc-pa 0.36s linear infinite;
+  animation-play-state: paused;
+
+  &.b {
+    animation-name: jtc-pb;
+  }
+}
+
+.tail {
+  position: absolute;
+  left: -2px;
+  top: 8px;
+  width: 11px;
+  height: 4px;
+  background: var(--ink);
+  border-radius: 4px;
+  transform-origin: right center;
+  animation: jtc-tail 1.15s ease-in-out infinite;
+
+  .tail2 {
+    position: absolute;
+    right: 8px;
+    top: 0;
+    width: 12px;
+    height: 4px;
+    background: var(--ink);
+    border-radius: 4px;
+    transform-origin: right center;
+    animation: jtc-tail2 0.82s ease-in-out infinite;
+  }
+}
+
+.body {
+  position: absolute;
+  left: 8px;
+  top: 3px;
+  width: 33px;
+  height: 16px;
+  background: var(--ink);
+  border-radius: 44% 60% 60% 44% / 50%;
+}
+
+.head {
+  position: absolute;
+  right: 2px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background: var(--ink);
+  border-radius: 54%;
+}
+
+.z {
+  position: absolute;
+  right: -3px;
+  top: -9px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--ink);
+  opacity: 0;
+}
+
+.follow {
+  .p {
+    animation-play-state: running;
+  }
+
+  .tail {
+    animation-duration: 0.5s;
+  }
+}
+
+.sit .p,
+.groom .p,
+.sleep .p {
+  animation: none;
+  opacity: 0.3;
+  transform: scale(0.5);
+}
+
+.groom .tail {
+  animation: jtc-flick 0.55s ease-in-out infinite;
+}
+
+.sleep {
+  .tail {
+    animation-duration: 2.6s;
+  }
+
+  .body {
+    animation: jtc-breathe 2.6s ease-in-out infinite;
+  }
+
+  .z {
+    animation: jtc-z 2.4s ease-in-out infinite;
+  }
+}
+
+@keyframes jtc-pa {
+  0%,
+  100% {
+    transform: translateX(-1.5px);
+  }
+  50% {
+    transform: translateX(2.5px);
+  }
+}
+
+@keyframes jtc-pb {
+  0%,
+  100% {
+    transform: translateX(2.5px);
+  }
+  50% {
+    transform: translateX(-1.5px);
+  }
+}
+
+@keyframes jtc-tail {
+  0%,
+  100% {
+    transform: rotate(-14deg);
+  }
+  50% {
+    transform: rotate(16deg);
+  }
+}
+
+@keyframes jtc-tail2 {
+  0%,
+  100% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes jtc-flick {
+  0%,
+  100% {
+    transform: rotate(-8deg);
+  }
+  25% {
+    transform: rotate(32deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+  75% {
+    transform: rotate(28deg);
+  }
+}
+
+@keyframes jtc-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes jtc-z {
+  0% {
+    opacity: 0;
+    transform: translateY(2px) scale(0.7);
+  }
+  30% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-12px) scale(1.1);
+  }
+}

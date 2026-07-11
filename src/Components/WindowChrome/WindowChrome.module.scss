@@ -1,0 +1,54 @@
+/* Retro window chrome — extracted from the prototype's hero terminal
+   (border 1px var(--line2), radius 14, bg var(--bg2)) and about photo card.
+   Shadows/padding are section-specific: append via className/bodyClassName. */
+
+.window {
+  position: relative;
+  border: 1px solid var(--line2);
+  border-radius: 14px;
+  background: var(--bg2);
+}
+
+.window_bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 14px;
+  background: var(--winbar);
+  border-bottom: 1px solid var(--line);
+
+  /* keep the bar inside the 14px outer radius (no overflow:hidden on the
+     outer so the topSlot cat can perch above the window) */
+  border-radius: 13px 13px 0 0;
+}
+
+.window_dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.window_dot_red {
+  background: #e05b4a;
+}
+
+.window_dot_amber {
+  background: #e9b94a;
+}
+
+.window_dot_green {
+  background: #5ab877;
+}
+
+.window_title {
+  margin-left: 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11.5px;
+  color: var(--ink3);
+}
+
+.window_body {
+  border-radius: 0 0 13px 13px;
+  overflow: hidden;
+}

@@ -1,23 +1,25 @@
-import { render, screen, waitFor } from 'test-utils';
-import userEvent from '@testing-library/user-event';
+import { fireEvent, render, screen } from 'test-utils';
 import { App } from '.';
 
-it('renders with out crashing', () => {
-  const { container } = render(<App />);
+describe('App', () => {
+  it('renders the redesigned page with every section anchor', () => {
+    const { container } = render(<App />);
 
-  expect(container.firstChild).toBeTruthy();
-});
+    expect(container.firstChild).toHaveAttribute('id', 'top');
+    ['work', 'about', 'experience', 'skills', 'contact'].forEach((id) => {
+      expect(container.querySelector(`#${id}`)).toBeInTheDocument();
+    });
+  });
 
-it('switch theme to dark and light mode', async () => {
-  const { container } = render(<App />);
+  it('opens and closes the 404 overlay from the footer link', () => {
+    render(<App />);
 
-  const slideToggle = screen.getByTestId('slide-toggle');
-  expect(slideToggle).toBeInTheDocument();
+    expect(screen.queryByText('404')).not.toBeInTheDocument();
 
-  expect(container.firstChild).not.toHaveClass('dark_mode');
-  expect(container.firstChild).toHaveClass('light_mode');
-  await waitFor(() => userEvent.click(slideToggle));
+    fireEvent.click(screen.getByText(/there.s a 404 for that/i));
+    expect(screen.getByText('404')).toBeInTheDocument();
 
-  await waitFor(() => expect(container.firstChild).not.toHaveClass('light_mode'));
-  await waitFor(() => expect(container.firstChild).toHaveClass('dark_mode'));
+    fireEvent.click(screen.getByRole('button', { name: /take me home/i }));
+    expect(screen.queryByText('404')).not.toBeInTheDocument();
+  });
 });

@@ -1,54 +1,60 @@
 import { FC } from 'react';
-import { Section } from 'Components/Section';
-import { LinkButton } from 'Components/LinkButton';
-import pdf from './file/resume.pdf';
+import { SectionHeader } from 'Components/SectionHeader';
+import { WindowChrome } from 'Components/WindowChrome';
+import jessie from 'assets/jt/jessie.jpg';
 
 import styles from './AboutMe.module.scss';
-import { Tools, tools } from './tools';
+
+const facts = [
+  { label: 'EXPERIENCE', value: '6+ yrs in production' },
+  { label: 'OWNERSHIP', value: 'full-stack, end to end' },
+  { label: 'CORE', value: 'React · Next.js · TS · Node' },
+  { label: 'DOMAINS', value: 'SaaS · internal · fintech · multi-tenant' },
+  { label: 'INFRA', value: 'cloud deploys · DevOps · CI/CD' },
+  { label: 'BASED', value: 'Philippines → working globally' }
+];
 
 export const AboutMe: FC = () => {
   return (
-    <Section id="about-me" className={styles.about_me} animation="fade-right">
-      <div className={styles.about_container}>
-        <h1>About Me</h1>
-        <h3>
-          As an experienced full-stack developer with five years of hands-on experience, I bring a versatile skill set
-          to the table. My expertise spans both front-end and back-end technologies, making me a valuable asset to any
-          development team. On the front-end, I have a strong command of JavaScript, React, and Redux, enabling me to
-          design and implement dynamic and responsive user interfaces. Proficiency in front-end technologies such as CSS
-          and HTML ensures that I can create visually appealing and user-friendly web applications.
-        </h3>
-        <h3>
-          On the back-end, I excel in building scalable and cost-effective systems, with a deep understanding of
-          databases and effective data integration. I am also well-versed in cloud hosting and deployment strategies,
-          ensuring that applications I work on are not only functional but also performant and easily scalable.
-          Additionally, I am skilled in project management, utilizing collaboration tools like Git, GitHub, and JIRA.
-        </h3>
-        <h3>
-          My commitment to delivering high-quality, efficient, and maintainable code is unwavering. I thrive on
-          problem-solving and collaboration, always eager to embrace emerging technologies to enhance the quality of my
-          work. With a proven track record of success, I am dedicated to continuous growth and development, constantly
-          seeking opportunities to expand my skills and contribute to innovative full-stack projects.
-        </h3>
-        <h3>These are the tools that he&apos;s been using over the past few years in web development.</h3>
-        <div className={styles.tools}>
-          {tools.map((item: Tools, i) => (
-            <a
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={i}
-              title={item.title}
-              className={styles.tools_logo}
-            >
-              <img src={item.src} alt={item.alt} />
-            </a>
-          ))}
-        </div>
-        <div className={styles.about_button}>
-          <LinkButton link={pdf}>View Resume</LinkButton>
+    <section id="about" className={styles.about}>
+      <div className="wrap">
+        <SectionHeader num="01" name="about" comment="// who’s behind the commits" />
+        <div className="two-col">
+          <div data-reveal>
+            <h2 className={styles.about_heading}>I turn complicated workflows into products that feel simple.</h2>
+            <p className={styles.about_paragraph}>
+              I’m a full-stack software engineer with <b className={styles.about_strong}>6+ years</b> building
+              production applications. I enjoy turning complicated workflows into products that feel simple, reliable,
+              and pleasant to use.
+            </p>
+            <p className={`${styles.about_paragraph} ${styles.about_paragraph_end}`}>
+              I work across the entire product lifecycle — from understanding the problem and designing the system to
+              building the interface, APIs, infrastructure, and deployment pipelines.
+            </p>
+            <div className={styles.about_callout}>
+              <span className={styles.about_callout_mark} aria-hidden="true">
+                &#47;&#47;
+              </span>
+              <span className={styles.about_callout_text}>
+                My favorite feature is the one users never need explained.
+              </span>
+            </div>
+          </div>
+          <div data-reveal data-reveal-delay="120">
+            <WindowChrome title="jessie.jpg — preview" className={styles.photo_card}>
+              <img src={jessie} alt="Jessie Tarrosa" className={styles.photo} />
+            </WindowChrome>
+            <div className={styles.facts}>
+              {facts.map((fact) => (
+                <div key={fact.label} className={styles.facts_row}>
+                  <span className={styles.facts_label}>{fact.label}</span>
+                  <span className={styles.facts_value}>{fact.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-    </Section>
+    </section>
   );
 };

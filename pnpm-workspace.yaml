@@ -1,0 +1,9 @@
+overrides:
+  enhanced-resolve: ^5.17.1
+  sass-loader: ^16.0.6
+
+allowBuilds:
+  '@parcel/watcher': false
+  core-js: false
+  core-js-pure: false
+  unrs-resolver: false

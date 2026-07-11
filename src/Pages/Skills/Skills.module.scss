@@ -1,0 +1,77 @@
+/* Skills ("toolbox") section — translated from the prototype's inline styles
+   (proto lines 517–598). Layout grid `.skill-grid` + reveal base come from
+   the global jt-global.scss sheet. */
+
+.section {
+  padding: 20px 0 84px;
+}
+
+/* ---------- Icon rail: 12 tech logos in 42×42 white tiles ---------- */
+.rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.rail_tile {
+  width: 42px;
+  height: 42px;
+  background: #fff; /* intentionally theme-independent white tile (per prototype) */
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    object-fit: contain;
+  }
+}
+
+/* ---------- Skill cards (mono numbered headings + chip tags) ---------- */
+.card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+  background: var(--bg2);
+}
+
+.card_heading {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--accent2);
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+
+.card_chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.chip {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  background: var(--chip);
+  border: 1px solid var(--line);
+  padding: 5px 10px;
+  border-radius: 7px;
+}
+
+/* 05 · PRODUCT CAPABILITIES — spans 2 columns, accent-soft gradient bg */
+.card_wide {
+  background: linear-gradient(180deg, var(--accent-soft), var(--bg2));
+  grid-column: span 2;
+
+  .chip {
+    background: var(--bg2);
+  }
+}
+
+@media (max-width: 920px) {
+  .card_wide {
+    grid-column: auto; /* .skill-grid collapses to 1 column ≤920px */
+  }
+}

@@ -1,0 +1,193 @@
+/* Contact section — translated from the prototype (lines 669–741).
+   Layout grids (.contact-grid, .form-2) come from jt-global.scss. */
+
+.contact {
+  padding: 20px 0 90px;
+}
+
+/* ---------- Left column ---------- */
+.heading {
+  font-size: clamp(26px, 3.1vw, 36px);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  margin: 0 0 22px;
+  max-width: 18ch;
+}
+
+.heading_accent {
+  color: var(--accent);
+}
+
+.lede {
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--ink2);
+  margin: 0 0 26px;
+  max-width: 44ch;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13.5px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+
+.links_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 15px;
+  border-bottom: 1px solid var(--line);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.links_label {
+  color: var(--ink3);
+}
+
+.links_arrow {
+  color: var(--accent);
+}
+
+.resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid var(--line2);
+  background: var(--bg2);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 18px;
+  border-radius: 11px;
+}
+
+.resume_arrow {
+  color: var(--accent);
+}
+
+/* ---------- Right column — new-message.tsx window ---------- */
+.window {
+  overflow: hidden;
+  box-shadow: 0 26px 54px -32px rgba(0, 0, 0, 0.5);
+}
+
+.form {
+  padding: 22px;
+}
+
+.form_row {
+  margin-bottom: 14px;
+}
+
+.form_row_select {
+  margin-bottom: 18px;
+}
+
+/* label wraps the control (jsx-a11y assert "both"); the mono caption lives
+   in .form_label so the control keeps inheriting the body font */
+.form_field {
+  display: block;
+}
+
+.form_label {
+  display: block;
+  margin-bottom: 6px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ink3);
+  letter-spacing: 0.05em;
+}
+
+.form_input {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--line2);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+}
+
+.form_textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.form_error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--accent2);
+  background: var(--accent-soft);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 10px 12px;
+}
+
+.form_submit {
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px;
+  border-radius: 11px;
+  box-shadow: 0 12px 26px -14px var(--accent);
+}
+
+/* ---------- Success panel ---------- */
+.success {
+  padding: 44px 26px;
+  text-align: center;
+}
+
+.success_check {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 16px;
+}
+
+.success_title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+}
+
+.success_note {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink2);
+  margin: 0 auto;
+  max-width: 34ch;
+}
+
+.success_exit {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--ink3);
+  margin-top: 18px;
+}
+
+.success_exit_ok {
+  color: var(--ok);
+}
