@@ -207,8 +207,11 @@
 
 .cat_tail {
   position: absolute;
-  right: -6px;
-  bottom: 1px;
+  /* prototype had right:-6px, which floated the curl's hook past the loaf's
+     sloping right shoulder; tucked inboard so the tail rests on the back and
+     the hook tip touches the silhouette instead of hovering in air */
+  right: 16px;
+  bottom: -2px;
   width: 34px;
   height: 46px;
 }
