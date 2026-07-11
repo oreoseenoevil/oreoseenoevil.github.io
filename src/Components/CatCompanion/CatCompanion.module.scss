@@ -113,6 +113,63 @@
   z-index: 1;
 }
 
+/* world-fixed effects layer: paw prints, scratch dust, hearts.
+   Children are positioned via inline transform; animations only touch
+   opacity (or an inner node) so placement is never clobbered. */
+.fx {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  z-index: 44; /* just under the cat (45) */
+  pointer-events: none;
+}
+
+.paw {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--ink);
+  /* three smaller toe dots ahead of the pad (element is rotated to heading) */
+  box-shadow: -3px -4px 0 -1.4px var(--ink), 0 -5px 0 -1.3px var(--ink), 3px -4px 0 -1.4px var(--ink);
+  animation: jtc-paw 1.7s ease-out forwards;
+}
+
+.dust {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  i {
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--ink);
+    animation: jtc-dust 0.55s ease-out forwards;
+  }
+}
+
+.heart {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  i {
+    display: block;
+    font-style: normal;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--accent);
+    animation: jtc-heart 1.15s ease-out forwards;
+  }
+}
+
 .sit .p,
 .groom .p,
 .sleep .p,
@@ -275,6 +332,43 @@
   100% {
     opacity: 0;
     transform: translateY(-12px) scale(1.1);
+  }
+}
+
+@keyframes jtc-paw {
+  0% {
+    opacity: 0.42;
+  }
+  60% {
+    opacity: 0.26;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes jtc-dust {
+  0% {
+    opacity: 0.5;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(9px, -3px) scale(0.6);
+  }
+}
+
+@keyframes jtc-heart {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 4px) scale(0.7);
+  }
+  25% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -14px) scale(1.05);
   }
 }
 
