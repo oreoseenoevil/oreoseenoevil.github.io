@@ -68,17 +68,24 @@ export const Hero: FC = () => {
 
   const heroCat = (
     <div ref={catRef} data-testid="hero-cat" className={`hero-cat${catAwake ? ' awake' : ''} ${styles.cat}`}>
-      <div className={`hc-tail ${styles.cat_tail}`}>
+      {/* transform origins sit on the tail's attachment point (inside the loaf)
+          so both the idle wag and the awake lift pivot from the body, keeping
+          the tail visually attached in every pose */}
+      <div className={`hc-tail ${styles.cat_tail}`} style={{ transformOrigin: '8% 60%' }}>
         <svg
           className={`hc-tailwave ${styles.cat_tailwave}`}
-          viewBox="0 0 34 46"
-          width="34"
-          height="46"
+          viewBox="0 0 38 36"
+          width="38"
+          height="36"
+          style={{ transformOrigin: '2px 20px' }}
           aria-hidden="true"
         >
           <path
-            d="M18,46 C 17,34 18,20 24,13 C 26,10 30,11 28,15 C 27,12 23,13 20,16 C 15,22 13,34 11,46 Z"
-            fill="var(--ink)"
+            d="M1,20 C 9,22 15,21 21,16.5 C 26.5,12.5 27.5,6.5 22,5.5 C 17.6,4.7 15,8.6 17.6,11.6 C 19.4,13.7 23.2,12.7 23.7,9.2"
+            fill="none"
+            stroke="var(--ink)"
+            strokeWidth="5"
+            strokeLinecap="round"
           />
         </svg>
       </div>

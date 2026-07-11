@@ -207,13 +207,13 @@
 
 .cat_tail {
   position: absolute;
-  /* prototype had right:-6px, which floated the curl's hook past the loaf's
-     sloping right shoulder; tucked inboard so the tail rests on the back and
-     the hook tip touches the silhouette instead of hovering in air */
-  right: 16px;
-  bottom: -2px;
-  width: 34px;
-  height: 46px;
+  /* the tail is a rounded stroke anchored inside the loaf's right flank; the
+     box extends past the body so the curl reads against the page background
+     (the prototype's filled curl either floated or vanished on this dome) */
+  right: -18px;
+  bottom: 2px;
+  width: 38px;
+  height: 36px;
 }
 
 .cat_tailwave {
