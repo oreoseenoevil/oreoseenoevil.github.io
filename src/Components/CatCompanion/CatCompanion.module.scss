@@ -38,23 +38,27 @@
   position: absolute;
   left: -2px;
   top: 8px;
-  width: 11px;
+  /* base extends to x=12, tucked 4px under the body (drawn behind it), so the
+     pivot sits inside the silhouette and the joint can't open a gap mid-swing */
+  width: 14px;
   height: 4px;
   background: var(--ink);
   border-radius: 4px;
   transform-origin: right center;
-  animation: jtc-tail 1.15s ease-in-out infinite;
+  animation: jtc-tail 1.3s cubic-bezier(0.45, 0, 0.55, 1) infinite;
 
   .tail2 {
     position: absolute;
-    right: 8px;
+    right: 11px;
     top: 0;
     width: 12px;
     height: 4px;
     background: var(--ink);
     border-radius: 4px;
     transform-origin: right center;
-    animation: jtc-tail2 0.82s ease-in-out infinite;
+    /* half the parent period + a phase lead = follow-through, like a whip */
+    animation: jtc-tail2 0.65s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    animation-delay: -0.18s;
   }
 }
 
@@ -96,7 +100,11 @@
   }
 
   .tail {
-    animation-duration: 0.5s;
+    animation-duration: 0.55s;
+
+    .tail2 {
+      animation-duration: 0.3s;
+    }
   }
 }
 
@@ -115,6 +123,10 @@
 .sleep {
   .tail {
     animation-duration: 2.6s;
+
+    .tail2 {
+      animation-duration: 1.3s;
+    }
   }
 
   .body {
