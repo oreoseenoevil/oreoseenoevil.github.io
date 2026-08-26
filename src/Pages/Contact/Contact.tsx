@@ -128,7 +128,7 @@ export const Contact: FC = () => {
                 </span>
               </a>
             </div>
-            <a href={resume} download className={styles.resume}>
+            <a href={resume} download="Jessie_Tarrosa_CV.pdf" className={styles.resume}>
               Download R&eacute;sum&eacute;{' '}
               <span className={styles.resume_arrow} aria-hidden="true">
                 &darr;
