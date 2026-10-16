@@ -16,7 +16,6 @@ const MARQUEE_ITEMS = [
   'TRUSTED WITH PRODUCTION',
   'Permission.io',
   'Accenture · Solution.AI',
-  'S2Data',
   'Landasia',
   'Pure Desire'
 ];

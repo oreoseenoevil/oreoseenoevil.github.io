@@ -2,13 +2,12 @@ import { FC } from 'react';
 import { SectionHeader } from 'Components/SectionHeader';
 import permission from 'assets/jt/work/permission.png';
 import skillAi from 'assets/jt/work/skill-ai.png';
-import s2data from 'assets/jt/work/s2data.png';
 import styles from './Work.module.scss';
 
 const flagshipTech = ['Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Redis', 'AWS'];
 const permissionTech = ['React', 'TypeScript', 'Node.js', 'Wallets'];
 const solutionAiTech = ['React', 'TypeScript', 'Data viz', 'MLOps'];
-const invenireTech = ['React', 'Node.js', 'OpenAI'];
+const recordsTech = ['React', 'Node.js', 'Elasticsearch'];
 
 const alsoShippedLabel = '// also shipped —';
 
@@ -180,7 +179,7 @@ export const Work: FC = () => {
           </div>
         </div>
 
-        {/* 2-COL: Solution.AI + S2Data */}
+        {/* 2-COL: Solution.AI + records client (kept unnamed) */}
         <div className="proj-grid">
           <div className={styles.card} data-reveal>
             <div className={`${styles.card_media} ${styles.card_media_ai}`}>
@@ -211,24 +210,24 @@ export const Work: FC = () => {
           </div>
           <div className={styles.card} data-reveal data-reveal-delay="100">
             <div className={`${styles.card_media} ${styles.card_media_s2}`}>
-              <img src={s2data} alt="S2Data" className={styles.card_img} />
+              <span className={styles.card_media_label}>client work · confidential</span>
             </div>
             <div className={styles.card_body}>
               <div className={styles.card_meta}>
                 <span className={styles.card_num}>04 — CLIENT</span>
                 <span className={styles.card_type}>ai · review</span>
               </div>
-              <h3 className={styles.card_title}>Invenire · Review AI</h3>
+              <h3 className={styles.card_title}>Records · Review AI</h3>
               <p className={styles.card_desc}>
-                A records &amp; document application with an AI-assisted review layer — surfacing and reviewing
-                information faster. Built for S2Data.
+                A records &amp; document application with an AI-assisted review layer, surfacing and reviewing
+                information faster. Built for a confidential client.
               </p>
               <div className={styles.card_role}>
                 <span className={styles.card_role_label}>{'role '}</span>
-                Full-Stack Developer · client: S2Data
+                Full-Stack Developer · client work
               </div>
               <div className={styles.chips}>
-                {invenireTech.map((tech) => (
+                {recordsTech.map((tech) => (
                   <span key={tech} className={styles.chip}>
                     {tech}
                   </span>

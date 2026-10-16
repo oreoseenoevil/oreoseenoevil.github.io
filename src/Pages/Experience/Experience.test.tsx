@@ -10,7 +10,7 @@ it('renders the section header and all five roles', () => {
 
   expect(experienceRoles).toHaveLength(5);
   expect(screen.getByText('Atrium OS')).toBeInTheDocument();
-  expect(screen.getByText('S2Data')).toBeInTheDocument();
+  expect(screen.getByText('Confidential client')).toBeInTheDocument();
   expect(screen.getByText('Permission.io')).toBeInTheDocument();
   expect(screen.getByText('Accenture · Solution.AI')).toBeInTheDocument();
   expect(screen.getByText('Landasia')).toBeInTheDocument();

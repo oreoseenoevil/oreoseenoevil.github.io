@@ -47,8 +47,8 @@ it('should render the Permission.io wide card and the two-up project cards', () 
   expect(screen.getByText('shipped wallet, daily-earn & auth across web apps')).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: 'Accenture · Solution.AI' })).toBeInTheDocument();
   expect(screen.getByAltText('Accenture Solution.AI')).toBeInTheDocument();
-  expect(screen.getByRole('heading', { name: 'Invenire · Review AI' })).toBeInTheDocument();
-  expect(screen.getByAltText('S2Data')).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: 'Records · Review AI' })).toBeInTheDocument();
+  expect(screen.queryByAltText('S2Data')).not.toBeInTheDocument();
 });
 
 it('should render the also-shipped pill row with real external links', () => {

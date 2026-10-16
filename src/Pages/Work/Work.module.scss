@@ -462,6 +462,15 @@
 
 .card_media_s2 {
   background: #0f1720;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card_media_label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .card_img {

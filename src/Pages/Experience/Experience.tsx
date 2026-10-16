@@ -30,21 +30,21 @@ export const experienceRoles: ExperienceRole[] = [
   },
   {
     period: '2024 — Now',
-    company: 'S2Data',
+    company: 'Confidential client',
     current: true,
     title: 'Full-Stack Developer · client engagement',
     description: (
       <>
-        Building <b className={styles.row_strong}>Invenire</b>, a records & document application, and{' '}
-        <b className={styles.row_strong}>Invenire Review AI</b> — its AI-assisted review layer.
+        Building a <b className={styles.row_strong}>records & document application</b> and its{' '}
+        <b className={styles.row_strong}>AI-assisted review layer</b>.
       </>
     ),
     bullets: [
-      'Built the Invenire application end to end',
-      'Shipped Invenire Review AI for AI-assisted review',
+      'Built the records application end to end',
+      'Shipped the AI-assisted review layer',
       'Own features front to back, UI to APIs'
     ],
-    tech: 'Next.js · TypeScript · MongoDB · Elasticsearch · BullMQ · OpenAI'
+    tech: 'Next.js · TypeScript · MongoDB · Elasticsearch · BullMQ'
   },
   {
     period: '2022 — 2024',
