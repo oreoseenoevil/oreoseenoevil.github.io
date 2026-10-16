@@ -30,12 +30,15 @@ it('links elsewhere targets with rel noopener', () => {
 
   const github = screen.getByRole('link', { name: 'GitHub ↗' });
   const linkedin = screen.getByRole('link', { name: 'LinkedIn ↗' });
-  const codewars = screen.getByRole('link', { name: 'Codewars ↗' });
+  const demo = screen.getByRole('link', { name: 'Demo video ↗' });
 
   expect(github).toHaveAttribute('href', 'https://github.com/oreoseenoevil/');
   expect(linkedin).toHaveAttribute('href', 'https://www.linkedin.com/in/jessiedev/');
-  expect(codewars).toHaveAttribute('href', 'https://www.codewars.com/users/oreoseenoevil');
-  [github, linkedin, codewars].forEach((link) => {
+  expect(demo).toHaveAttribute(
+    'href',
+    'https://drive.google.com/file/d/15SlHoyTbgKL_6MY576gk8CglH0AoDnnS/view?usp=sharing'
+  );
+  [github, linkedin, demo].forEach((link) => {
     expect(link).toHaveAttribute('target', '_blank');
     expect(link).toHaveAttribute('rel', 'noopener noreferrer');
   });
