@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.3aad8032.css",
-    "main.js": "/static/js/main.51980bcf.js",
+    "main.js": "/static/js/main.d2a8f5e8.js",
     "static/js/822.e12cdf11.chunk.js": "/static/js/822.e12cdf11.chunk.js",
     "static/media/jessie.jpg": "/static/media/jessie.e8f6c58a4cf4d9ddfec9.jpg",
     "static/media/permission.png": "/static/media/permission.44c13d2ae244ceca8a90.png",
     "static/media/s2data.png": "/static/media/s2data.6e5de46f04ece8bfdc82.png",
     "static/media/skill-ai.png": "/static/media/skill-ai.021e9f0e71fec1fa44df.png",
-    "static/media/resume.pdf": "/static/media/resume.d38b7abd9f27caaa4e7b.pdf",
+    "static/media/resume.pdf": "/static/media/resume.26c7edac4870125a0d3a.pdf",
     "static/media/caveat-latin-600-normal.woff": "/static/media/caveat-latin-600-normal.92b462534bf6910ae449.woff",
     "static/media/caveat-latin-500-normal.woff": "/static/media/caveat-latin-500-normal.9f8525964b1de24b35a2.woff",
     "static/media/caveat-cyrillic-500-normal.woff": "/static/media/caveat-cyrillic-500-normal.f7b81508ecb743c1bd68.woff",
@@ -126,11 +126,11 @@
     "static/media/typescript.svg": "/static/media/typescript.1294a8abbdf271bfe1543dc6b0cbaeed.svg",
     "static/media/prisma.svg": "/static/media/prisma.2830f44078542461f7ea89b2e8b9790d.svg",
     "main.3aad8032.css.map": "/static/css/main.3aad8032.css.map",
-    "main.51980bcf.js.map": "/static/js/main.51980bcf.js.map",
+    "main.d2a8f5e8.js.map": "/static/js/main.d2a8f5e8.js.map",
     "822.e12cdf11.chunk.js.map": "/static/js/822.e12cdf11.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3aad8032.css",
-    "static/js/main.51980bcf.js"
+    "static/js/main.d2a8f5e8.js"
   ]
 }
