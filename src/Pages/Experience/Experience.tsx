@@ -29,13 +29,14 @@ export const experienceRoles: ExperienceRole[] = [
     tech: 'Next.js · TypeScript · tRPC · MongoDB · Tailwind · AWS'
   },
   {
-    period: '2024 — Now',
-    company: 'Confidential client',
+    period: '2022 — Now',
+    company: 'CoDev Philippines',
     current: true,
-    title: 'Full-Stack Developer · client engagement',
+    title: 'Senior Full-Stack Developer · client engagements',
     description: (
       <>
-        Building a <b className={styles.row_strong}>records & document application</b> and its{' '}
+        Remote engineer for overseas clients. Current engagement: a{' '}
+        <b className={styles.row_strong}>records & document application</b> and its{' '}
         <b className={styles.row_strong}>AI-assisted review layer</b>.
       </>
     ),
@@ -47,10 +48,10 @@ export const experienceRoles: ExperienceRole[] = [
     tech: 'Next.js · TypeScript · MongoDB · Elasticsearch · BullMQ'
   },
   {
-    period: '2022 — 2024',
+    period: '2022 — 2023',
     company: 'Permission.io',
-    meta: 'fintech · web3',
-    title: 'Full-Stack Developer',
+    meta: 'fintech · web3 · via CoDev',
+    title: 'Full-Stack Engineer',
     description: 'Rewards platform connecting brands and consumers through crypto and a permissioned identity layer.',
     bullets: [
       'Shipped wallet & daily-earn flows used across web apps',
@@ -63,7 +64,7 @@ export const experienceRoles: ExperienceRole[] = [
     period: '2021 — 2022',
     company: 'Accenture · Solution.AI',
     meta: 'enterprise · AI',
-    title: 'Full-Stack Developer',
+    title: 'Advanced Application Engineering Analyst',
     description:
       'Talent & skilling suite for a 15k-person organization — workforce analytics, skill graphs, and MLOps tooling.',
     bullets: [
@@ -74,13 +75,13 @@ export const experienceRoles: ExperienceRole[] = [
     tech: 'React · TypeScript · Data viz · MLOps'
   },
   {
-    period: '2019 — 2021',
-    company: 'Landasia',
-    meta: 'web',
-    title: 'Web Developer',
-    description: 'Real-estate web platform and membership applications.',
-    bullets: ['Delivered marketing & membership front-ends', 'Built responsive property-listing experiences'],
-    tech: 'React · Node.js'
+    period: '2015 — 2016',
+    company: 'Land Asia Realty',
+    meta: 'web · internship',
+    title: 'Web Designer (Internship)',
+    description: 'Company web presence and marketing for a real-estate developer.',
+    bullets: ['Built the company site, property listings & subdomains', 'Designed print & marketing collateral'],
+    tech: 'WordPress · PHP · HTML/CSS · JavaScript'
   }
 ];
 

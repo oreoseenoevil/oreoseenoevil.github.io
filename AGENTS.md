@@ -122,3 +122,4 @@ Personal portfolio for Jessie Tarrosa, served at https://jessiet.dev from GitHub
 - Tests assert copy verbatim: when you change copy, update the matching `*.test.tsx` in the same change.
 - The contact form reads `REACT_APP_WEB3FORMS_ACCESS_KEY` from a gitignored `.env` (CI uses the `WEB3FORMS_ACCESS_KEY` secret). Never commit `.env`.
 - Facts on the site (employers, dates, stack, numbers) must match the owner's real experience and `src/assets/file/resume.pdf`; ask before adding or changing any claim.
+- `public/static/media/resume.f13cb43a350669d52831.pdf` keeps a CV link already sent to employers working: copy the new PDF over it whenever `src/assets/file/resume.pdf` changes.

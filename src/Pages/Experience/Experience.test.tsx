@@ -10,10 +10,10 @@ it('renders the section header and all five roles', () => {
 
   expect(experienceRoles).toHaveLength(5);
   expect(screen.getByText('Atrium OS')).toBeInTheDocument();
-  expect(screen.getByText('Confidential client')).toBeInTheDocument();
+  expect(screen.getByText('CoDev Philippines')).toBeInTheDocument();
   expect(screen.getByText('Permission.io')).toBeInTheDocument();
   expect(screen.getByText('Accenture · Solution.AI')).toBeInTheDocument();
-  expect(screen.getByText('Landasia')).toBeInTheDocument();
+  expect(screen.getByText('Land Asia Realty')).toBeInTheDocument();
 });
 
 it('shows an accent "current" pill only on the two current roles', () => {
@@ -26,14 +26,15 @@ it('renders role titles, bullets and tech lines verbatim', () => {
   render(<Experience />);
 
   expect(screen.getByText('Founder, Product Designer & Full-Stack Engineer')).toBeInTheDocument();
-  expect(screen.getAllByText('Full-Stack Developer')).toHaveLength(2);
-  expect(screen.getByText('Full-Stack Developer · client engagement')).toBeInTheDocument();
-  expect(screen.getByText('Web Developer')).toBeInTheDocument();
+  expect(screen.getByText('Full-Stack Engineer')).toBeInTheDocument();
+  expect(screen.getByText('Advanced Application Engineering Analyst')).toBeInTheDocument();
+  expect(screen.getByText('Senior Full-Stack Developer · client engagements')).toBeInTheDocument();
+  expect(screen.getByText('Web Designer (Internship)')).toBeInTheDocument();
 
   expect(screen.getAllByText('›')).toHaveLength(14);
   expect(screen.getByText(/Designed schema, APIs & UI for dues, billing & accounting/)).toBeInTheDocument();
-  expect(screen.getByText(/Built responsive property-listing experiences/)).toBeInTheDocument();
+  expect(screen.getByText(/Built the company site, property listings & subdomains/)).toBeInTheDocument();
 
   expect(screen.getByText('Next.js · TypeScript · tRPC · MongoDB · Tailwind · AWS')).toBeInTheDocument();
-  expect(screen.getByText('React · Node.js')).toBeInTheDocument();
+  expect(screen.getByText('WordPress · PHP · HTML/CSS · JavaScript')).toBeInTheDocument();
 });
