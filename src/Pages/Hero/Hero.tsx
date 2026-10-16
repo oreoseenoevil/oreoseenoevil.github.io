@@ -146,7 +146,7 @@ export const Hero: FC = () => {
             </div>
             <div className={styles.stats}>
               <span>
-                <b className={styles.stats_value}>6+</b> yrs shipping
+                <b className={styles.stats_value}>9+</b> yrs shipping
               </span>
               <span className={styles.stats_divided}>full-stack ownership</span>
               <span className={styles.stats_divided}>PH → global</span>

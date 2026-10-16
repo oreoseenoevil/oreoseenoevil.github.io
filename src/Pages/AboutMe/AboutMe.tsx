@@ -6,7 +6,7 @@ import jessie from 'assets/jt/jessie.jpg';
 import styles from './AboutMe.module.scss';
 
 const facts = [
-  { label: 'EXPERIENCE', value: '6+ yrs in production' },
+  { label: 'EXPERIENCE', value: '9+ yrs building software' },
   { label: 'OWNERSHIP', value: 'full-stack, end to end' },
   { label: 'CORE', value: 'React · Next.js · TS · Node' },
   { label: 'DOMAINS', value: 'SaaS · internal · fintech · multi-tenant' },
@@ -23,9 +23,9 @@ export const AboutMe: FC = () => {
           <div data-reveal>
             <h2 className={styles.about_heading}>I turn complicated workflows into products that feel simple.</h2>
             <p className={styles.about_paragraph}>
-              I’m a full-stack software engineer with <b className={styles.about_strong}>6+ years</b> building
-              production applications. I enjoy turning complicated workflows into products that feel simple, reliable,
-              and pleasant to use.
+              I’m a senior full-stack software engineer with <b className={styles.about_strong}>9+ years</b> building
+              software. I enjoy turning complicated workflows into products that feel simple, reliable, and pleasant to
+              use.
             </p>
             <p className={`${styles.about_paragraph} ${styles.about_paragraph_end}`}>
               I work across the entire product lifecycle — from understanding the problem and designing the system to
