@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.3aad8032.css",
-    "main.js": "/static/js/main.9f22e96a.js",
+    "main.js": "/static/js/main.51980bcf.js",
     "static/js/822.e12cdf11.chunk.js": "/static/js/822.e12cdf11.chunk.js",
     "static/media/jessie.jpg": "/static/media/jessie.e8f6c58a4cf4d9ddfec9.jpg",
     "static/media/permission.png": "/static/media/permission.44c13d2ae244ceca8a90.png",
     "static/media/s2data.png": "/static/media/s2data.6e5de46f04ece8bfdc82.png",
     "static/media/skill-ai.png": "/static/media/skill-ai.021e9f0e71fec1fa44df.png",
+    "static/media/resume.pdf": "/static/media/resume.d38b7abd9f27caaa4e7b.pdf",
     "static/media/caveat-latin-600-normal.woff": "/static/media/caveat-latin-600-normal.92b462534bf6910ae449.woff",
     "static/media/caveat-latin-500-normal.woff": "/static/media/caveat-latin-500-normal.9f8525964b1de24b35a2.woff",
     "static/media/caveat-cyrillic-500-normal.woff": "/static/media/caveat-cyrillic-500-normal.f7b81508ecb743c1bd68.woff",
     "static/media/caveat-cyrillic-600-normal.woff": "/static/media/caveat-cyrillic-600-normal.ce21b64cb3348eed4dfb.woff",
     "static/media/caveat-latin-600-normal.woff2": "/static/media/caveat-latin-600-normal.7e631aecf49ac69edea7.woff2",
     "static/media/caveat-latin-500-normal.woff2": "/static/media/caveat-latin-500-normal.4f6df04f9ddfb5cf262e.woff2",
-    "static/media/resume.pdf": "/static/media/resume.dbda7545d52cb23b60cd.pdf",
     "static/media/caveat-cyrillic-600-normal.woff2": "/static/media/caveat-cyrillic-600-normal.5ada122cca30392b9670.woff2",
     "static/media/caveat-cyrillic-500-normal.woff2": "/static/media/caveat-cyrillic-500-normal.4855ac8f084889e43b7a.woff2",
     "static/media/caveat-cyrillic-ext-500-normal.woff": "/static/media/caveat-cyrillic-ext-500-normal.a5678a338b057d45fd5f.woff",
@@ -126,11 +126,11 @@
     "static/media/typescript.svg": "/static/media/typescript.1294a8abbdf271bfe1543dc6b0cbaeed.svg",
     "static/media/prisma.svg": "/static/media/prisma.2830f44078542461f7ea89b2e8b9790d.svg",
     "main.3aad8032.css.map": "/static/css/main.3aad8032.css.map",
-    "main.9f22e96a.js.map": "/static/js/main.9f22e96a.js.map",
+    "main.51980bcf.js.map": "/static/js/main.51980bcf.js.map",
     "822.e12cdf11.chunk.js.map": "/static/js/822.e12cdf11.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3aad8032.css",
-    "static/js/main.9f22e96a.js"
+    "static/js/main.51980bcf.js"
   ]
 }
