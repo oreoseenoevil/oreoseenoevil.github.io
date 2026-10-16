@@ -13,13 +13,15 @@ it('should render the toolbox section header and icon rail', () => {
   expect(screen.getByAltText('Git')).toBeInTheDocument();
 });
 
-it('should render all five skill cards with their chips', () => {
+it('should render all six skill cards with their chips', () => {
   render(<Skills />);
   expect(screen.getByText('01 · PRODUCT ENGINEERING')).toBeInTheDocument();
   expect(screen.getByText('02 · FRONTEND SYSTEMS')).toBeInTheDocument();
   expect(screen.getByText('03 · BACKEND & DATA')).toBeInTheDocument();
   expect(screen.getByText('04 · CLOUD & DEVOPS')).toBeInTheDocument();
   expect(screen.getByText('05 · PRODUCT CAPABILITIES')).toBeInTheDocument();
+  expect(screen.getByText('06 · AI-ASSISTED ENGINEERING')).toBeInTheDocument();
+  expect(screen.getByText('Claude Code')).toBeInTheDocument();
   expect(screen.getByText('tRPC')).toBeInTheDocument();
   expect(screen.getByText('shadcn/ui')).toBeInTheDocument();
   expect(screen.getByText('BullMQ')).toBeInTheDocument();

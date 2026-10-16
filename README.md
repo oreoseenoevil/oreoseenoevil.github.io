@@ -1,45 +1,27 @@
 # Portfolio
 
-## Prerequisites
+Source for [jessiet.dev](https://jessiet.dev/): React 18, TypeScript and SCSS modules on Create React App, deployed to GitHub Pages on every push to `master`.
 
-```
-Node (v14.18.1 is recommended)
-```
+## Run it
 
-## Git clone
-
-To clone repository first you have to install git
-
-```
-git clone https://github.com/oreoseenoevil/oreoseenoevil.github.io.git
-```
-
-## Installation
+Requires Node (see `.nvmrc`) and pnpm.
 
 ```bash
-npm install
+pnpm install
+pnpm start
 ```
 
-## Usage
+Copy `.env.example` to `.env` and add a Web3Forms key to enable the contact form.
+
+## Check it
 
 ```bash
-npm start
+pnpm lint
+npx tsc --noEmit
+pnpm test
+pnpm build
 ```
 
-## [Demo](https://jessiet.dev/)
+## Built with Claude Code
 
-You can access the project to this site: https://jessiet.dev/
-
-## Testing
-
-To run tests, use:
-
-```bash
-npm run test
-```
-
-## Languages, Libraries & API
-
-- [Node](https://nodejs.org/en/)
-
-- [React](https://reactjs.org/)
+This site is built with an AI-assisted workflow in [Claude Code](https://claude.com/claude-code). [`CLAUDE.md`](CLAUDE.md) and [`AGENTS.md`](AGENTS.md) are the working rules the agents follow: planning gates, parallel workers with exclusive file ownership, a verification gate before every commit, and this project's own rules.

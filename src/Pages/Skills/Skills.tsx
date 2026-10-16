@@ -25,6 +25,7 @@ interface SkillCard {
   chips: string[];
   delay?: string;
   wide?: boolean;
+  full?: boolean;
 }
 
 const toolIcons: ToolIcon[] = [
@@ -45,21 +46,32 @@ const toolIcons: ToolIcon[] = [
 const skillCards: SkillCard[] = [
   {
     heading: '01 · PRODUCT ENGINEERING',
-    chips: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Express', 'tRPC']
+    chips: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Express', 'tRPC', 'Zod', 'React Hook Form']
   },
   {
     heading: '02 · FRONTEND SYSTEMS',
-    chips: ['Tailwind CSS', 'shadcn/ui', 'Radix UI', 'Material UI', 'Ant Design', 'React Query', 'Zustand'],
+    chips: [
+      'Tailwind CSS',
+      'shadcn/ui',
+      'Radix UI',
+      'React Aria',
+      'Material UI',
+      'Ant Design',
+      'React Query',
+      'Zustand',
+      'AG Grid',
+      'Three.js'
+    ],
     delay: '80'
   },
   {
     heading: '03 · BACKEND & DATA',
-    chips: ['MongoDB', 'PostgreSQL', 'Redis', 'Elasticsearch', 'BullMQ'],
+    chips: ['MongoDB', 'Mongoose', 'PostgreSQL', 'Prisma', 'Redis', 'Elasticsearch', 'BullMQ', 'Better Auth', 'CASL'],
     delay: '160'
   },
   {
     heading: '04 · CLOUD & DEVOPS',
-    chips: ['AWS', 'Docker', 'CI/CD', 'DigitalOcean', 'Vercel', 'Serverless']
+    chips: ['AWS', 'S3', 'Docker', 'GitHub Actions', 'DigitalOcean', 'Vercel', 'Serverless', 'Playwright', 'Vitest']
   },
   {
     heading: '05 · PRODUCT CAPABILITIES',
@@ -73,6 +85,20 @@ const skillCards: SkillCard[] = [
     ],
     delay: '80',
     wide: true
+  },
+  {
+    heading: '06 · AI-ASSISTED ENGINEERING',
+    chips: [
+      'Claude Code',
+      'Multi-agent workflows',
+      'Spec-driven development',
+      'AI code review',
+      'OpenAI API',
+      'LLM product features',
+      'Prompt engineering'
+    ],
+    wide: true,
+    full: true
   }
 ];
 
@@ -92,7 +118,9 @@ export const Skills: FC = () => {
           {skillCards.map((card) => (
             <div
               key={card.heading}
-              className={card.wide ? `${styles.card} ${styles.card_wide}` : styles.card}
+              className={[styles.card, card.wide && styles.card_wide, card.full && styles.card_full]
+                .filter(Boolean)
+                .join(' ')}
               data-reveal
               data-reveal-delay={card.delay}
             >

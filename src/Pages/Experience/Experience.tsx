@@ -26,7 +26,7 @@ export const experienceRoles: ExperienceRole[] = [
       'Shipped resident portal + multi-estate administration',
       'Own infra, CI/CD & production deploys'
     ],
-    tech: 'Next.js · TypeScript · Node.js · PostgreSQL · Redis · AWS'
+    tech: 'Next.js · TypeScript · tRPC · MongoDB · Tailwind · AWS'
   },
   {
     period: '2024 — Now',
@@ -44,7 +44,7 @@ export const experienceRoles: ExperienceRole[] = [
       'Shipped Invenire Review AI for AI-assisted review',
       'Own features front to back, UI to APIs'
     ],
-    tech: 'React · Node.js · TypeScript · OpenAI'
+    tech: 'Next.js · TypeScript · MongoDB · Elasticsearch · BullMQ · OpenAI'
   },
   {
     period: '2022 — 2024',

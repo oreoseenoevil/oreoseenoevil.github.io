@@ -34,6 +34,6 @@ it('renders role titles, bullets and tech lines verbatim', () => {
   expect(screen.getByText(/Designed schema, APIs & UI for dues, billing & accounting/)).toBeInTheDocument();
   expect(screen.getByText(/Built responsive property-listing experiences/)).toBeInTheDocument();
 
-  expect(screen.getByText('Next.js · TypeScript · Node.js · PostgreSQL · Redis · AWS')).toBeInTheDocument();
+  expect(screen.getByText('Next.js · TypeScript · tRPC · MongoDB · Tailwind · AWS')).toBeInTheDocument();
   expect(screen.getByText('React · Node.js')).toBeInTheDocument();
 });
