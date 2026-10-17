@@ -34,10 +34,7 @@ it('links elsewhere targets with rel noopener', () => {
 
   expect(github).toHaveAttribute('href', 'https://github.com/oreoseenoevil/');
   expect(linkedin).toHaveAttribute('href', 'https://www.linkedin.com/in/jessiedev/');
-  expect(demo).toHaveAttribute(
-    'href',
-    'https://drive.google.com/file/d/15SlHoyTbgKL_6MY576gk8CglH0AoDnnS/view?usp=sharing'
-  );
+  expect(demo).toHaveAttribute('href', '/media/atrium-walkthrough.mp4');
   [github, linkedin, demo].forEach((link) => {
     expect(link).toHaveAttribute('target', '_blank');
     expect(link).toHaveAttribute('rel', 'noopener noreferrer');

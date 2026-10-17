@@ -44,11 +44,8 @@ export const Footer: FC<FooterProps> = ({ onOpen404 }) => {
               <a href="https://www.linkedin.com/in/jessiedev/" target="_blank" rel="noopener noreferrer">
                 LinkedIn &#8599;
               </a>
-              <a
-                href="https://drive.google.com/file/d/15SlHoyTbgKL_6MY576gk8CglH0AoDnnS/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              {/* Self-hosted: Google Drive's player kept loading for some reviewers */}
+              <a href="/media/atrium-walkthrough.mp4" target="_blank" rel="noopener noreferrer">
                 Demo video &#8599;
               </a>
               <a href="mailto:app.creator@jessiet.dev">app.creator@jessiet.dev</a>
