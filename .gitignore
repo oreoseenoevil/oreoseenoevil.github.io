@@ -120,3 +120,5 @@ build
 build/
 
 # End of https://www.gitignore.io/api/node,sass,react
+# Claude Code local files and worktrees
+.claude/

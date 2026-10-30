@@ -24,4 +24,4 @@ pnpm build
 
 ## Built with Claude Code
 
-This site is built with an AI-assisted workflow in [Claude Code](https://claude.com/claude-code). [`CLAUDE.md`](CLAUDE.md) and [`AGENTS.md`](AGENTS.md) are the working rules the agents follow: planning gates, parallel workers with exclusive file ownership, a verification gate before every commit, and this project's own rules.
+This site is built with an AI-assisted workflow in [Claude Code](https://claude.com/claude-code). [`CLAUDE.md`](CLAUDE.md) is the working rulebook the agents follow: planning gates, parallel workers with exclusive file ownership and an explicit model and effort each, a verification gate before every commit, and this project's own rules.
