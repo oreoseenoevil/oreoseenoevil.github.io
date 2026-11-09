@@ -49,11 +49,20 @@ export const Footer: FC<FooterProps> = ({ onOpen404 }) => {
                 Demo video &#8599;
               </a>
               <a href="mailto:app.creator@jessiet.dev">app.creator@jessiet.dev</a>
+              <a href="/thornbloom/terms.html" target="_blank" rel="noopener noreferrer">
+                Thornbloom terms &#8599;
+              </a>
+              <a href="/thornbloom/privacy.html" target="_blank" rel="noopener noreferrer">
+                Thornbloom privacy &#8599;
+              </a>
             </div>
           </div>
         </div>
         <div className={styles.footer_bottom}>
-          <span>&copy; 2026 Jessie Tarrosa &middot; made in the Philippines, deployed worldwide</span>
+          <span>
+            &copy; 2026 Jessie Tarrosa &middot; Tarrosa Software Development Services &middot; made in the Philippines,
+            deployed worldwide
+          </span>
           <span className={styles.footer_bottom_links}>
             <a href="#lost" onClick={handleLostClick}>
               lost? there&rsquo;s a 404 for that

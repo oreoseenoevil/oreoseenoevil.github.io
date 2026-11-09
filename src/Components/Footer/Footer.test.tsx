@@ -11,7 +11,11 @@ it('renders the brand blurb, quip, and copyright', () => {
     screen.getByText('Serious software, minus the boring parts. Building Atrium OS and open to ambitious products.')
   ).toBeInTheDocument();
   expect(screen.getByText('// built at 2am, refactored at noon')).toBeInTheDocument();
-  expect(screen.getByText(/© 2026 Jessie Tarrosa · made in the Philippines, deployed worldwide/)).toBeInTheDocument();
+  expect(
+    screen.getByText(
+      /© 2026 Jessie Tarrosa · Tarrosa Software Development Services · made in the Philippines,\s+deployed worldwide/
+    )
+  ).toBeInTheDocument();
 });
 
 it('links the sitemap to the section anchors', () => {
@@ -31,11 +35,15 @@ it('links elsewhere targets with rel noopener', () => {
   const github = screen.getByRole('link', { name: 'GitHub ↗' });
   const linkedin = screen.getByRole('link', { name: 'LinkedIn ↗' });
   const demo = screen.getByRole('link', { name: 'Demo video ↗' });
+  const terms = screen.getByRole('link', { name: 'Thornbloom terms ↗' });
+  const privacy = screen.getByRole('link', { name: 'Thornbloom privacy ↗' });
 
+  expect(terms).toHaveAttribute('href', '/thornbloom/terms.html');
+  expect(privacy).toHaveAttribute('href', '/thornbloom/privacy.html');
   expect(github).toHaveAttribute('href', 'https://github.com/oreoseenoevil/');
   expect(linkedin).toHaveAttribute('href', 'https://www.linkedin.com/in/jessiedev/');
   expect(demo).toHaveAttribute('href', '/media/atrium-walkthrough.mp4');
-  [github, linkedin, demo].forEach((link) => {
+  [github, linkedin, demo, terms, privacy].forEach((link) => {
     expect(link).toHaveAttribute('target', '_blank');
     expect(link).toHaveAttribute('rel', 'noopener noreferrer');
   });
